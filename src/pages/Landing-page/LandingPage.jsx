@@ -7,7 +7,7 @@ import {
   image5,
   image6,
   image7,
-  image3,CategorybrandCategorybrand
+  image3,
 } from "../../assets/images";
 import { Footer, Navbar } from "../../components";
 import { Productcategory } from "./Component/Productcategory";
@@ -37,7 +37,7 @@ export const LandingPage = () => {
             </button>
           </div>
         </div>
-        <div className="categorey          </div>_container">
+        <div className="categorey_container">
           <h3 className="category_heading"> Top Categories </h3>
           <div className="title_underline"> </div>
           <div className="categorey_list dis_flex">
