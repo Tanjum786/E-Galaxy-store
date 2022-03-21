@@ -34,6 +34,7 @@ export const Navbar = () => {
             <a href="/pages/wishlist.html">
               <i className="icon_nav fa fa-heart-o"></i>
             </a>
+            <p className="badge_wishlist font_small dis_flex padding_small">0</p>
           </li>
           <li className="list-item-inline">
             <a href="/pages/cart.html">
@@ -45,8 +46,8 @@ export const Navbar = () => {
             <a href="/">
               <i className="icon_nav fas fa-user"></i>
             </a>
-            <p className="badge_wishlist font_small dis_flex padding_small">0</p>
-          </li>
+            
+          </li> 
         </ul>
       </div>
     </nav>
