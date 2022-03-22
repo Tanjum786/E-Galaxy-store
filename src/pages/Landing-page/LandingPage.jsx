@@ -17,11 +17,11 @@ export const LandingPage = () => {
   return (
     <>
       <div className="e_container">
-        <Navbar />
+        <Navbar auth={"Login"} />
         <div className="advertise_sale dis_flex">
           <div v>
             <a href="/index.html">
-              <h1 className="e_website_name"> E - Galaxy - store </h1>
+              <h1 className="e_website_name"> E-Galaxy-store </h1>
               <h5 className="ui_tagline"> Find it, love it, buy it. </h5>
             </a>
           </div>
@@ -44,17 +44,17 @@ export const LandingPage = () => {
             <Productcategory
               cardimg={image5}
               cardAlt={"image"}
-              cardTitle={" Kid 's Wear"}
+              cardTitle={" Kid's Wear"}
             />
-            <Productcategory 
+            <Productcategory
               cardimg={image6}
               cardAlt={"image"}
-              cardTitle={"Mens 's Wear"}
+              cardTitle={"Mens's Wear"}
             />
             <Productcategory
               cardimg={image7}
               cardAlt={"image"}
-              cardTitle={"Womens 's Wear"}
+              cardTitle={"Women's Wear"}
             />
           </div>
         </div>
@@ -62,11 +62,11 @@ export const LandingPage = () => {
           <h3 className="category_heading"> Top Brands </h3>
           <div className="title_underline"> </div>
           <div className="categorey_list dis_flex">
-            <Categorybrand logoimage={image1} logalt={'logoBibi'}/>
-            <Categorybrand logoimage={image2} logalt={'logozara'}/>
-            <Categorybrand logoimage={image3} logalt={'logoAdidas'}/>
-            <Categorybrand logoimage={image4}  logalt={'logGucci'}/>
-            </div>
+            <Categorybrand logoimage={image1} logalt={"logoBibi"} />
+            <Categorybrand logoimage={image2} logalt={"logozara"} />
+            <Categorybrand logoimage={image3} logalt={"logoAdidas"} />
+            <Categorybrand logoimage={image4} logalt={"logogucci"} />
+          </div>
         </div>
         <Footer />
       </div>

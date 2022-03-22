@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react";
 
-export const Navbar = () => {
+export const Navbar = ({ auth }) => {
   return (
     <nav className="nav_bar">
       <div>
@@ -27,14 +27,16 @@ export const Navbar = () => {
           </li>
           <li>
             <a className="login_btn" href="/pages/login.html">
-              Login
+              {auth}
             </a>
           </li>
           <li className="list-item-inline">
             <a href="/pages/wishlist.html">
               <i className="icon_nav fa fa-heart-o"></i>
             </a>
-            <p className="badge_wishlist font_small dis_flex padding_small">0</p>
+            <p className="badge_wishlist font_small dis_flex padding_small">
+              0
+            </p>
           </li>
           <li className="list-item-inline">
             <a href="/pages/cart.html">
@@ -46,13 +48,9 @@ export const Navbar = () => {
             <a href="/">
               <i className="icon_nav fas fa-user"></i>
             </a>
-            
-          </li> 
+          </li>
         </ul>
       </div>
     </nav>
-
-  )
-}
-
-
+  );
+};

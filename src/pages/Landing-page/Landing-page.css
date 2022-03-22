@@ -1,13 +1,11 @@
-.e_container {
-  width: 120.4%;
-}
-
 .product_btn,
 .e_icons,
-.shopnow_btn {              
+.shopnow_btn {
   transition: all 0.3s ease-in-out;
 }
-
+.e_container{
+  width: 124.3%;
+}
 a,
 .product_btn,
 .e_icons,
@@ -65,7 +63,6 @@ h5,
 
 .icon_nav {
   color: var(--primary-color);
-  
 }
 
 .advertise_sale {
@@ -194,22 +191,22 @@ h5,
   }
 
   .shopnow_btn {
-      position: absolute;
-      bottom: 5.5rem;
-      right: 3rem;
+    position: absolute;
+    bottom: 5.5rem;
+    right: 3rem;
   }
 }
 
 @media screen and (max-width: 320px) {
-.e_container{
-  width: 100%;
-}
+  .e_container {
+    width: 100%;
+  }
   .nav_bar {
     height: 10rem;
   }
-.category_heading{
-  font-size: 1.5rem;
-}
+  .category_heading {
+    font-size: 1.5rem;
+  }
   .e_website_name,
   .sale_tagline {
     font-size: 1rem;

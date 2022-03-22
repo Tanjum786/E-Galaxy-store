@@ -1,13 +1,12 @@
 import React from "react";
 import { Footer, Navbar } from "../../components";
-import './Authentication.css'
+import "./Authentication.css";
 
-
-const Login = () => {
+export const Login = () => {
   return (
     <>
       <div className="e_container">
-        <Navbar />
+        <Navbar auth={"Signup"} />
         <section class="e_login_signup_container dis_flex">
           <form>
             <div class="login_signup_container gap_s dis_flex">
@@ -60,5 +59,3 @@ const Login = () => {
     </>
   );
 };
-
-export default Login;

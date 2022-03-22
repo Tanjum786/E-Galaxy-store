@@ -6,7 +6,7 @@ export const Forgotpassword = () => {
   return (
     <>
       <div className="e_container">
-        <Navbar />
+        <Navbar auth={"Login"}/>
         <section class="e_login_signup_container dis_flex">
           <form>
             <div class="login_signup_container gap_s dis_flex">
@@ -24,7 +24,7 @@ export const Forgotpassword = () => {
                 class="input_filed padding_small"
                 name="password"
                 type="password"
-                placeholder="Enter Your again password"
+                placeholder="Enter again your password"
                 required
               />
               <button type="submit" class="login_btn btn_style">
