@@ -17,7 +17,7 @@ export const Wishlist = () => {
           <Wishlistcard
             cardimg={image5}
             cardAlt={"image"}
-            cardPrice={"Rs.2500"}
+            cardPrice= {2500}
             cardTitle={"Kid's Festive & party ware"}
             cardDic={"FTC Fashions"}
           />

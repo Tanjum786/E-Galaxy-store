@@ -15,7 +15,7 @@ export const Navbar = ({ auth,linkto }) => {
         <button>
           <i className="fa fa-search"></i>
         </button>
-        <input type="text" placeholder=" Search Your Desier" name="search" />
+        <input type="text" placeholder=" Search Your Desire" name="search" />
       </div>
       <div>
         <ul className="nav_list">

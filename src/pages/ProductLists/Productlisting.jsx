@@ -31,11 +31,11 @@ export const Productlisting = () => {
                     </div>
                     <div className="product_card_details gap_s dis_flex">
                       <span>{item.title}</span>
-                      <h3>{item.price}</h3>
+                      <h3>₹ {item.price}</h3>
                     </div>
                     <div>
                       <button className="add_to_cart bg_color padding_small">
-                        Add to Cart <a href="/"></a>
+                        Add to Cart
                       </button>
                     </div>
                   </div>
