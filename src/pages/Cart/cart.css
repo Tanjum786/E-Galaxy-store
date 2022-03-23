@@ -54,6 +54,10 @@
   gap: 0.5rem;
 }
 
+.main_container {
+  width: 116.8%;
+}
+
 .cart_img {
   height: 20rem;
 }
@@ -132,26 +136,32 @@
   margin: 1rem;
   border: none;
 }
+
 @media (max-width: 768px) {
   .price_detailes_container {
     width: 50%;
   }
 }
+
 @media (max-width: 320px) {
   .btn_cart {
     width: 15rem;
     border: 1px solid var(--lightblue-color);
   }
+
   .img_container {
     border-bottom: 1px solid var(--boder-color);
     border-right: none;
   }
+
   .cart_img {
     height: 15rem;
   }
+
   .cart_card_container {
     font-size: 0.5rem;
   }
+
   .cart_container {
     background-color: var(--pureWhite-color);
   }

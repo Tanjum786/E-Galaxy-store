@@ -1,13 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-export const Navbar = ({ auth }) => {
+export const Navbar = ({ auth,linkto }) => {
   return (
+    <div className="nav_container">
     <nav className="nav_bar">
       <div>
-        <a href="/index.html">
+        <Link to="/">
           <h1 className="e_website_name">E-Galaxy-store</h1>
           <h5 className="ui_tagline">Find it, love it, buy it.</h5>
-        </a>
+        </Link>
       </div>
       <div className="search">
         <button>
@@ -18,39 +20,40 @@ export const Navbar = ({ auth }) => {
       <div>
         <ul className="nav_list">
           <li>
-            <a
+            <Link
+              to="/product"
               className="product_btn padding_small font_small"
-              href="/pages/product.html"
             >
               Products
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="login_btn" href="/pages/login.html">
+            <Link to={linkto} className="login_btn">
               {auth}
-            </a>
+            </Link>
           </li>
           <li className="list-item-inline">
-            <a href="/pages/wishlist.html">
+            <Link to="/wishlist">
               <i className="icon_nav fa fa-heart-o"></i>
-            </a>
+            </Link>
             <p className="badge_wishlist font_small dis_flex padding_small">
               0
             </p>
           </li>
           <li className="list-item-inline">
-            <a href="/pages/cart.html">
+            <Link to="/cart">
               <i className="icon_nav fas fa-shopping-cart"></i>
-            </a>
+            </Link>
             <p className="badge_cart font_small dis_flex padding_small">0</p>
           </li>
           <li className="list-item-inline">
-            <a href="/">
+            <Link to="/add usre">
               <i className="icon_nav fas fa-user"></i>
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
     </nav>
+    </div>
   );
 };

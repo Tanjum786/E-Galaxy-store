@@ -12,18 +12,19 @@ import {
 import { Footer, Navbar } from "../../components";
 import { Productcategory } from "./Component/Productcategory";
 import { Categorybrand } from "./Component/Categorybrand";
+import { Link } from "react-router-dom";
 
 export const LandingPage = () => {
   return (
     <>
       <div className="e_container">
-        <Navbar auth={"Login"} />
+        <Navbar auth={"Login"} linkto={'/login'}/>
         <div className="advertise_sale dis_flex">
-          <div v>
-            <a href="/index.html">
+          <div>
+            <Link to="/">
               <h1 className="e_website_name"> E-Galaxy-store </h1>
               <h5 className="ui_tagline"> Find it, love it, buy it. </h5>
-            </a>
+            </Link>
           </div>
           <div className="e_sales">
             <div className="offer"> 50 % off on exclusive products </div>
@@ -31,9 +32,9 @@ export const LandingPage = () => {
               Life is hard enough already.Let us make it a little easier.
             </h4>
             <button className="shopnow_btn padding_small">
-              <a href="/pages/product.html">
-                Shop now <i className="fas fa-shopping-bag"> </i>
-              </a>
+            <Link to='/product'>
+            Shop now <i className="fas fa-shopping-bag"> </i>
+            </Link>
             </button>
           </div>
         </div>

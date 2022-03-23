@@ -8,9 +8,9 @@ export const Filtters = () => {
           <li>
             <div class="product_title dis_flex">
               <h1>Filtter</h1>
-              <a href="/" class="clear_btn font_small">
+              <button class="clear_btn font_small">
                 Clear
-              </a>
+              </button>
             </div>
           </li>
           <li>
@@ -21,7 +21,7 @@ export const Filtters = () => {
                 <p class="prices font_small">1500</p>
                 <p class="prices font_small">2000</p>
               </div>
-              <input type="range" name="value" max="10" />
+              <input type="range" max="10"/>
             </div>
           </li>
           <li>

@@ -3,9 +3,7 @@
 .shopnow_btn {
   transition: all 0.3s ease-in-out;
 }
-.e_container{
-  /* width: 124.3%; */
-}
+
 a,
 .product_btn,
 .e_icons,
@@ -70,14 +68,12 @@ h5,
   flex-direction: row-reverse;
   margin-top: 1rem;
   height: 15rem;
-  background-image: linear-gradient(
-    #dcfce7,
-    #f1f5f9,
-    #fefce8,
-    #fecdd3,
-    #fef2f2,
-    #bbf7d0
-  );
+  background-image: linear-gradient(#dcfce7,
+      #f1f5f9,
+      #fefce8,
+      #fecdd3,
+      #fef2f2,
+      #bbf7d0);
 }
 
 .e_sales,
@@ -171,6 +167,7 @@ h5,
   color: var(--black-color);
   border-radius: 50%;
 }
+
 .search,
 .logo_container {
   border: none;
@@ -201,12 +198,15 @@ h5,
   .e_container {
     width: 100%;
   }
+
   .nav_bar {
     height: 10rem;
   }
+
   .category_heading {
     font-size: 1.5rem;
   }
+
   .e_website_name,
   .sale_tagline {
     font-size: 1rem;
@@ -258,6 +258,7 @@ h5,
     width: 15rem;
     margin: 1rem;
   }
+
   p {
     padding: 0.3rem;
     font-size: 1rem;

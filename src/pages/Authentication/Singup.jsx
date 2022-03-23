@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Footer, Navbar } from "../../components";
 import "./Authentication.css";
 
@@ -6,7 +7,7 @@ export const Singup = () => {
   return (
     <>
       <div className="e_container">
-        <Navbar auth={"Login"} />
+        <Navbar auth={"Login"} linkto={'/login'} />
         <section class="e_login_signup_container dis_flex">
           <form>
             <div class="login_signup_container signup_container gap_s dis_flex">
@@ -71,18 +72,17 @@ export const Singup = () => {
                 <label for="Terms">I accept all Terms & Conditions</label>
               </div>
               <button type="submit" class="login_btn  btn_style">
-                <a href="/">Register</a>
+                Register
               </button>
               <p class="new_account_link font_small">
-                Already have account?{" "}
-                <a class="alert_primary" href="/pages/login.html">
-                  Login Here
-                </a>
+                Already have account?
+                <Link to="/login" class="alert_primary">
+                Login Here
+                </Link>
               </p>
             </div>
           </form>
         </section>
-        <Footer />
       </div>
     </>
   );
