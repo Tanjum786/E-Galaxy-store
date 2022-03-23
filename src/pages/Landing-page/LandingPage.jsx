@@ -18,7 +18,7 @@ export const LandingPage = () => {
   return (
     <>
       <div className="e_container">
-        <Navbar auth={"Login"} linkto={'/login'}/>
+        <Navbar auth={"Login"} linkto={"/login"} />
         <div className="advertise_sale dis_flex">
           <div>
             <Link to="/">
@@ -32,9 +32,9 @@ export const LandingPage = () => {
               Life is hard enough already.Let us make it a little easier.
             </h4>
             <button className="shopnow_btn padding_small">
-            <Link to='/product'>
-            Shop now <i className="fas fa-shopping-bag"> </i>
-            </Link>
+              <Link to="/product">
+                Shop now <i className="fas fa-shopping-bag"> </i>
+              </Link>
             </button>
           </div>
         </div>
