@@ -1,0 +1,78 @@
+.e_login_signup_container {
+  margin-top: 5rem;
+  justify-content: center;
+}
+
+.login_btn,
+.login_signup_name {
+  text-align: center;
+  border: none;
+}
+
+.new_account_link {
+  position: absolute;
+  bottom: 0rem;
+  left: 0rem;
+}
+
+.login_signup_container {
+  position: relative;
+  padding: 2rem;
+  width: 25rem;
+  padding-bottom: 4rem;
+  box-shadow: 2px 2px 4px 3px var(--component-color);
+}
+
+.login_signup_name {
+  font-family: var(--secondary-font);
+  font-size: 2rem;
+}
+
+.login_signup_container {
+  flex-direction: column;
+}
+
+.forget_password {
+  color: var(--primary-color);
+  padding-left: 5rem;
+  text-decoration: underline;
+}
+
+.checkbox_section {
+  gap: 0.5rem;
+}
+
+.input_filed {
+  border-radius: 4px;
+  border: 1px solid var(--black-color);
+}
+
+.btn_style {
+  font-size: 1.5rem;
+}
+
+/* signup */
+.signup_container {
+  width: 30rem;
+}
+
+.star_color {
+  color: var(--danger-alert-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+@media screen and (max-width: 320px) {
+  .login_signup_container {
+    width: 18rem;
+    box-shadow: none;
+  }
+  .signup_container {
+    width: 20rem;
+  }
+  .btn_style {
+    font-size: 1rem;
+  }
+  .forget_password {
+    padding: 0;
+  }
+}
