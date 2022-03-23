@@ -34,7 +34,7 @@ const Cartbill = ({
         </p>
       </ul>
       <button className="place_order">
-        Place order<a href="/"></a>
+        Place order
       </button>
     </div>
   );

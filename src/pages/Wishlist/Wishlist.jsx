@@ -7,8 +7,8 @@ import "./wishlist.css";
 export const Wishlist = () => {
   return (
     <>
-      <div className="e_container">
-        <Navbar auth={"Login"} />
+      <div>
+        <Navbar auth={"Login"} linkto={'/login'} />
         <div>
           <h1 className="headline">My WishList</h1>
           <div className="title_underline"></div>
@@ -21,7 +21,7 @@ export const Wishlist = () => {
             cardTitle={"Kid's Festive & party ware"}
             cardDic={"FTC Fashions"}
           />
-          <Wishlistcard
+          {/* <Wishlistcard
             cardimg={image6}
             cardAlt={"image"}
             cardPrice={"Rs.2500"}
@@ -35,6 +35,20 @@ export const Wishlist = () => {
             cardTitle={"Kid's Festive & party ware"}
             cardDic={"FTC Fashions"}
           />
+           <Wishlistcard
+            cardimg={image7}
+            cardAlt={"image"}
+            cardPrice={"Rs.2500"}
+            cardTitle={"Kid's Festive & party ware"}
+            cardDic={"FTC Fashions"}
+          />
+           <Wishlistcard
+            cardimg={image7}
+            cardAlt={"image"}
+            cardPrice={"Rs.2500"}
+            cardTitle={"Kid's Festive & party ware"}
+            cardDic={"FTC Fashions"}
+          /> */}
         </section>
         <Footer />
       </div>

@@ -1,14 +1,13 @@
 import React from "react";
 import { products } from "../../backend/db/products";
-import { Footer } from "../../components/Footer-comp/Footer";
-import { Navbar } from "../../components/Navbar-comp/Navbar";
+import { Footer, Navbar } from "../../components";
 import { Filtters } from "./component/Filtters";
 import "./productpage.css";
 export const Productlisting = () => {
   return (
     <>
-      <div className="e_container">
-        <Navbar auth={"Login"} />
+      <div>
+      <Navbar auth={"Login"} linkto={'/login'}/>
         <section className="product_container dis_flex">
           <Filtters />
           <div className="product_card_list">
@@ -45,7 +44,7 @@ export const Productlisting = () => {
             </div>
           </div>
         </section>
-        <Footer />
+        <Footer/>
       </div>
     </>
   );

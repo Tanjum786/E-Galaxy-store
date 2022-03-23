@@ -3,9 +3,9 @@ const Wishlistcard = ({ cardimg, cardAlt, cardTitle, cardPrice, cardDic }) => {
     <div className="wishlist_card">
       <div className="wishlist_img">
         <div className="wishlist_icon dis_flex">
-          <a href="/">
+          <button className="wish-btn">
             <i className="fas fa-heart"></i>
-          </a>
+          </button>
         </div>
         <img src={cardimg} alt={cardAlt} />
       </div>
@@ -17,9 +17,9 @@ const Wishlistcard = ({ cardimg, cardAlt, cardTitle, cardPrice, cardDic }) => {
         <span>{cardDic}</span>
       </div>
       <div className="btn_container dis_flex">
-        <a href="/" className="e_secondary_btn padding_small">
+        <button className="e_secondary_btn padding_small">
           Move to Cart<i className="fa fa-shopping-cart cart_btn"></i>
-        </a>
+        </button>
       </div>
     </div>
   );

@@ -1,12 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { useState } from "react/cjs/react.production.min";
 import { Footer, Navbar } from "../../components";
 import "./Authentication.css";
 
 export const Login = () => {
+
   return (
     <>
       <div className="e_container">
-        <Navbar auth={"Signup"} />
+        <Navbar auth={"Signup"} linkto={'/signup'}/>
         <section class="e_login_signup_container dis_flex">
           <form>
             <div class="login_signup_container gap_s dis_flex">
@@ -38,23 +41,22 @@ export const Login = () => {
                   required
                 />
                 <label for="showpassword">Show Password</label>
-                <a class="forget_password" href="/pages/forgot_pass.html">
-                  <span>Forgot password ?</span>
-                </a>
+                <Link to='/Forgotpassword' class="forget_password">
+                <span>Forgot password ?</span>
+                </Link>
               </div>
               <button type="submit" class="login_btn btn_style">
-                <a href="/">Login</a>
+                Login
               </button>
               <p class="new_account_link font_small">
                 Not a user yet ?
-                <a class="alert_primary" href="/pages/signup.html">
+                <Link to="/signup" class="alert_primary">
                   Creat account
-                </a>
+                </Link>
               </p>
             </div>
           </form>
         </section>
-        <Footer />
       </div>
     </>
   );

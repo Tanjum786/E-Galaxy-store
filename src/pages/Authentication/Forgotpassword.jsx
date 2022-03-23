@@ -1,12 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Footer, Navbar } from "../../components";
 import './Authentication.css'
 
 export const Forgotpassword = () => {
   return (
     <>
-      <div className="e_container">
-        <Navbar auth={"Login"}/>
+      <div className="loginContainer">
+        <Navbar auth={"Login"} linkto={'/login'}/>
         <section class="e_login_signup_container dis_flex">
           <form>
             <div class="login_signup_container gap_s dis_flex">
@@ -28,12 +29,13 @@ export const Forgotpassword = () => {
                 required
               />
               <button type="submit" class="login_btn btn_style">
-                <a href="/pages/login.html">Reset Password</a>
+              <Link to='/login'>
+              Reset Password
+              </Link>
               </button>
             </div>
           </form>
         </section>
-        <Footer />
       </div>
     </>
   );
