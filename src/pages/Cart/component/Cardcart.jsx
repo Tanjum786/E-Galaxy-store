@@ -15,12 +15,12 @@ const Cardcart = ({
         <div className="card_detail">
           <h3>{cardtitle}</h3>
           <div className="cart_price dis_flex">
-            <h4 className="price">{cartprice}</h4>
-            <s className="cut_price">{cutprice}</s>
+            <h4 className="price">₹ {cartprice}</h4>
+            <s className="cut_price">₹ {cutprice}</s>
           </div>
-          <h6 className="cart_off">{discount}</h6>
+          <h6 className="cart_off">₹ {discount}</h6>
           <div className="cart_quantity dis_flex">
-            <span className="qunt">{Quantity}</span>
+            <span className="qunt">₹ {Quantity}</span>
             <button className="qunt_btn bg_color font_small" id="qunt_increase">
               +
             </button>
@@ -31,10 +31,10 @@ const Cardcart = ({
           </div>
           <div className="cart_btns dis_flex">
             <button className="cart_remove_btn btn_cart font_small">
-              Remove From cart<a href="/"></a>
+              Remove From cart
             </button>
             <button className="cart_wishlist_btn bg_color btn_cart font_small">
-              Move to wishlist<a href="/"></a>
+              Move to wishlist
             </button>
           </div>
         </div>

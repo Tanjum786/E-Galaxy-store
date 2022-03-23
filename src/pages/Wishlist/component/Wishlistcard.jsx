@@ -13,7 +13,7 @@ const Wishlistcard = ({ cardimg, cardAlt, cardTitle, cardPrice, cardDic }) => {
         <div className="title">{cardTitle}</div>
       </div>
       <div className="price_container dis_flex">
-        <span className="price_tag padding_small">{cardPrice}</span>
+        <span className="price_tag padding_small">₹ {cardPrice}</span>
         <span>{cardDic}</span>
       </div>
       <div className="btn_container dis_flex">

@@ -41,7 +41,7 @@ export const Filtters = () => {
               </div>
               <div>
                 <label for="womens_cloth">
-                  <input type="checkbox" id="womens_cloth" name="cloths" />{" "}
+                  <input type="checkbox" id="womens_cloth" name="cloths" />
                   women's cloth
                 </label>
               </div>
@@ -87,7 +87,7 @@ export const Filtters = () => {
               </div>
               <div>
                 <label for="HightoLow">
-                  <input type="radio" id="HightoLow" name="sort-price" />{" "}
+                  <input type="radio" id="HightoLow" name="sort-price" />
                   Price-High to Low
                 </label>
               </div>
