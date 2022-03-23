@@ -87,6 +87,14 @@
     font-weight: bold;
     text-decoration: underline;
     color: var(--secondary-color);
+    border: none;
+    border-radius: 0.5rem;
+    background-color: var(--background-color);
+}
+
+.clear_btn:hover {
+    color: var(--black-color);
+    transform: scale(1.03);
 }
 
 .product_card_img {
@@ -145,7 +153,8 @@
 .landscap_cards {
     margin: 1.5rem 1.5rem;
 }
-.rating_container{
+
+.rating_container {
     background-color: var(--success-alert-color);
     padding: 2px;
     width: 3rem;
@@ -155,7 +164,7 @@
     border-radius: 0.5rem;
 }
 
-.icon_star{
+.icon_star {
     color: var(--pureWhite-color);
-    font-size:0.9rem;
+    font-size: 0.9rem;
 }
