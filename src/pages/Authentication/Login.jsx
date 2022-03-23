@@ -47,15 +47,9 @@ export const Login = () => {
               </button>
               <p class="new_account_link font_small">
                 Not a user yet ?
-<<<<<<< Updated upstream
                 <a class="alert_primary" href="/pages/signup.html">
                   Creat account
                 </a>
-=======
-                <Link to="/signup" class="alert_primary">
-                  Create account
-                </Link>
->>>>>>> Stashed changes
               </p>
             </div>
           </form>
