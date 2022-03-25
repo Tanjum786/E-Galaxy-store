@@ -23,7 +23,6 @@ export const Cart = () => {
           cartitem={1}
         />
         <Cardcart
-          data={{ cardtitle, cartimg, cartprice, cutprice, discount, Quantity }}
           cardtitle={"SOM2SOM Women Solid Straight Kurta"}
           cartimg={image7}
           cartprice={"Rs.250"}

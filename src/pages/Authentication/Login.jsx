@@ -9,7 +9,7 @@ export const Login = () => {
   return (
     <>
       <div className="e_container">
-        <Navbar auth={"Signup"} linkto={'/signup'}/>
+        <Navbar auth="Signup" linkto='/signup'/>
         <section class="e_login_signup_container dis_flex">
           <form>
             <div class="login_signup_container gap_s dis_flex">
