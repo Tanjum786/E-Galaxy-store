@@ -1,6 +1,6 @@
 import React from "react";
 import "./cart.css";
-import { Footer, Navbar } from "../../components";
+import { Navbar } from "../../components";
 import { Cardcart } from "./component/Cardcart";
 import { image7 } from "../../assets/images";
 import { Cartbill } from "./component/Cartbill";
@@ -31,7 +31,6 @@ export const Cart = () => {
           Quantity={"Quantity :"}
         />
       </section>
-      <Footer />
     </div>
   );
 };
