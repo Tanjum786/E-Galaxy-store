@@ -3,10 +3,8 @@
     margin: 1rem;
 }
 
-.landscap_cards,
 .price_info,
-.all_cards_container,
-.landscap_btns {
+.all_cards_container {
     flex-wrap: wrap;
 }
 
@@ -16,18 +14,11 @@
 }
 
 .price_range,
-.landscap_btns,
 .product_card_details,
 .containt_list {
     flex-direction: column;
 }
 
-.landscap_wishlist:hover,
-.landscap_remove_wishlist,
-.landscap_cart {
-    background-color: var(--gray-color);
-    color: var(--black-color);
-}
 
 .price_list,
 .product_title {
@@ -39,28 +30,12 @@
     padding: 1rem;
 }
 
-.landscap_card_container,
-.product_card {
-    box-shadow: 2px 2px 2px 2px var(--boder-color);
-}
-
-.landscap_cart:hover {
-    background-color: var(--pureWhite-color);
-}
-
-.prices,
-.landscap_cut_price,
-.landscap_cart_off {
+.prices {
     color: var(--gray-color);
 }
 
-.landscap_remove_wishlist,
-.landscap_go_to_cart {
-    border: none;
-}
 
-.add_to_cart:hover,
-.landscap_go_to_cart {
+.add_to_cart:hover {
     background-color: var(--lightblue-color);
     color: var(--pureWhite-color);
 }
@@ -75,8 +50,15 @@
 }
 
 .product_card {
-    width: 15rem;
+    width: 17rem;
     margin-top: 2rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+.product_card:hover{
+    transform: scale(1.03);
+    box-shadow: 2px 2px 2px 2px var(--gray-color);
 }
 
 .containt_list {
@@ -100,6 +82,8 @@
 .product_card_img {
     position: relative;
     border-bottom: 1px solid var(--boder-color);
+    margin: 0.5rem;
+
 }
 
 .product_wishlist_icon {
@@ -132,26 +116,8 @@
     gap: 1.5rem;
 }
 
-.landscap_card_container {
-    width: 28rem;
-    height: 15.3rem;
-}
-
-.landscap_img {
-    width: 15rem;
-    border-right: 1px solid var(--boder-color);
-}
-
 .price_info {
     font-size: 1.5rem;
-}
-
-.landscap_card_btn {
-    border: 1px solid var(--gray-color);
-}
-
-.landscap_cards {
-    margin: 1.5rem 1.5rem;
 }
 
 .rating_container {

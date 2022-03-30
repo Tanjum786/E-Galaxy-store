@@ -1,6 +1,6 @@
 import React from "react";
-import { image5, image6, image7 } from "../../assets/images";
-import { Footer, Navbar } from "../../components";
+import { image5 } from "../../assets/images";
+import { Navbar } from "../../components";
 import { Wishlistcard } from "./component/Wishlistcard";
 import "./wishlist.css";
 
@@ -50,7 +50,6 @@ export const Wishlist = () => {
             cardDic={"FTC Fashions"}
           /> */}
         </section>
-        <Footer />
       </div>
     </>
   );

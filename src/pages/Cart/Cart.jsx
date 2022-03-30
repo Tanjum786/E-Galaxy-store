@@ -1,6 +1,6 @@
 import React from "react";
 import "./cart.css";
-import { Footer, Navbar } from "../../components";
+import { Navbar } from "../../components";
 import { Cardcart } from "./component/Cardcart";
 import { image7 } from "../../assets/images";
 import { Cartbill } from "./component/Cartbill";
@@ -15,12 +15,12 @@ export const Cart = () => {
       </div>
       <section className="cart_container dis_flex">
         <Cartbill
-          price={"₹250"}
-          DiscAmt={"₹250"}
-          DeliveryAmt={"₹0"}
-          SaveAmt={"₹250"}
-          TotalAmt={"₹250"}
-          cartitem={"1"}
+          price={250}
+          DiscAmt={250}
+          DeliveryAmt={0}
+          SaveAmt={250}
+          TotalAmt={250}
+          cartitem={1}
         />
         <Cardcart
           cardtitle={"SOM2SOM Women Solid Straight Kurta"}
@@ -31,7 +31,6 @@ export const Cart = () => {
           Quantity={"Quantity :"}
         />
       </section>
-      <Footer />
     </div>
   );
 };

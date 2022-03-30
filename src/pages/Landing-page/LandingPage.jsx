@@ -4,12 +4,9 @@ import {
   image1,
   image2,
   image4,
-  image5,
-  image6,
-  image7,
   image3,
 } from "../../assets/images";
-import { Footer, Navbar } from "../../components";
+import { Navbar } from "../../components";
 import { Productcategory } from "./Component/Productcategory";
 import { Categorybrand } from "./Component/Categorybrand";
 import { Link } from "react-router-dom";
@@ -18,7 +15,7 @@ export const LandingPage = () => {
   return (
     <>
       <div className="e_container">
-        <Navbar auth={"Login"} linkto={'/login'}/>
+        <Navbar auth={"Login"} linkto={"/login"} />
         <div className="advertise_sale dis_flex">
           <div>
             <Link to="/">
@@ -32,9 +29,9 @@ export const LandingPage = () => {
               Life is hard enough already.Let us make it a little easier.
             </h4>
             <button className="shopnow_btn padding_small">
-            <Link to='/product'>
-            Shop now <i className="fas fa-shopping-bag"> </i>
-            </Link>
+              <Link to="/product">
+                Shop now <i className="fas fa-shopping-bag"> </i>
+              </Link>
             </button>
           </div>
         </div>
@@ -42,21 +39,7 @@ export const LandingPage = () => {
           <h3 className="category_heading"> Top Categories </h3>
           <div className="title_underline"> </div>
           <div className="categorey_list dis_flex">
-            <Productcategory
-              cardimg={image5}
-              cardAlt={"image"}
-              cardTitle={" Kid's Wear"}
-            />
-            <Productcategory
-              cardimg={image6}
-              cardAlt={"image"}
-              cardTitle={"Mens's Wear"}
-            />
-            <Productcategory
-              cardimg={image7}
-              cardAlt={"image"}
-              cardTitle={"Women's Wear"}
-            />
+          <Productcategory/>
           </div>
         </div>
         <div className="categorey_container">
@@ -69,7 +52,6 @@ export const LandingPage = () => {
             <Categorybrand logoimage={image4} logalt={"logogucci"} />
           </div>
         </div>
-        <Footer />
       </div>
     </>
   );

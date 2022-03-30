@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Filtters = () => {
+export const Filters = () => {
   return (
     <>
       <div class="fillter_container bg_color font_small dis_flex">
