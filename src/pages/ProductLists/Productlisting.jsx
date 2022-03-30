@@ -1,6 +1,6 @@
 import React from "react";
 import { Navbar } from "../../components";
-import { Filtters } from "./component/Filtters";
+import { Filters } from "./component/Filtters";
 import { Products } from "./component/Products";
 import "./productpage.css";
 

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 
 const Productcategory = () => {
-  const [dataCat, setdataCata] = useState([]);
+  const [dataCata, setdataCata] = useState([]);
   const cataDatafetch = async () => {
     const response = await axios.get("/api/categories");
     setdataCata(response.data.categories);
@@ -12,7 +12,7 @@ const Productcategory = () => {
   
   return (
     <>
-      {dataCat.map(({ img, categoryName }) => {
+      {dataCata.map(({ img, categoryName }) => {
         return (
           <div className="card_container">
             <Link to="/product">
