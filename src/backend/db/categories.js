@@ -10,13 +10,13 @@ export const categories = [
   {
     _id: uuid(),
     categoryName: "Men's wear",
-    img:image5
+    img:image6
 
   },
   {
     _id: uuid(),
     categoryName: "Kid's wear",
-    img: image6
+    img: image5
   },
   {
     _id: uuid(),
