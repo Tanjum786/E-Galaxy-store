@@ -56,7 +56,7 @@ export const Products = () => {
                   <h3>₹ {price}</h3>
                 </div>
                 <div>
-                  <button className="add_to_cart bg_color padding_small">
+                  <button onClick className="add_to_cart bg_color padding_small">
                     Add to Cart
                   </button>
                 </div>
