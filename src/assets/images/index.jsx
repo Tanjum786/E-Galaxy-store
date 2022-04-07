@@ -22,6 +22,7 @@ import kidsimg4 from "./kids-img4.jpg";
 import kidsimg5 from "./kids-img5.jpg";
 import mensimg2 from "./mens-img2.jpeg";
 import mensimg3 from './mens-img3.jpeg'
+import imgWarning from './product-warning.png'
 
 export {
   image1,
@@ -47,5 +48,6 @@ export {
   kidsimg4,
   kidsimg5,
   mensimg2,
-  mensimg3
+  mensimg3,
+  imgWarning
 };
