@@ -159,3 +159,11 @@
     color: var(--secondary-color);
     margin: 1rem;
 }
+.wishlist_btn{
+    border: none;
+    font-size: 1rem;
+    background: none;
+}
+.color-btn{
+    color: red;
+}
