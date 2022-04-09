@@ -21,9 +21,10 @@ import kidsimg3 from "./kids-img3.jpg";
 import kidsimg4 from "./kids-img4.jpg";
 import kidsimg5 from "./kids-img5.jpg";
 import mensimg2 from "./mens-img2.jpeg";
-import mensimg3 from './mens-img3.jpeg'
-import imgWarning from './product-warning.png'
-
+import mensimg3 from './mens-img3.jpeg';
+import imgWarning from './product-warning.png';
+import Emptycartimg from './emptyCart.png'
+import wishlistimg from './wishlist-empty.png'
 export {
   image1,
   image2,
@@ -32,6 +33,8 @@ export {
   image6,
   image7,
   image3,
+  wishlistimg,
+  Emptycartimg,
   productimg1,
   productimg2,
   productimg3,
