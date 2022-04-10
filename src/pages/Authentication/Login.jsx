@@ -1,15 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useState } from "react/cjs/react.production.min";
-import { Footer, Navbar } from "../../components";
+import { Navbar } from "../../components";
+import { useloginsignup } from "../../hooks/context/loginSignup-context";
 import "./Authentication.css";
 
 export const Login = () => {
-
+  const {showpassword,showpasswordFun}=useloginsignup();
   return (
     <>
       <div className="e_container">
-        <Navbar auth="Signup" linkto='/signup'/>
+        <Navbar auth="Signup" linkto="/signup" />
         <section class="e_login_signup_container dis_flex">
           <form>
             <div class="login_signup_container gap_s dis_flex">
@@ -23,28 +23,31 @@ export const Login = () => {
                 placeholder="demo@demo.com"
                 required
               />
-              <label for="userPassword">Password*</label>
-              <input
-                type="password"
-                name="password"
-                id="userPassword"
-                class="input_filed padding_small"
-                placeholder="Enter your Password"
-                required
-              />
-              <div class="checkbox_section dis_flex">
+              <label for="useonClick={showiconfun}rPassword">Password*</label>
+              <div className="showpassword_container">
                 <input
-                  type="checkbox"
-                  name="checkbox"
-                  class="input_filed padding_small"
-                  id="showpassword"
+                  type={showpassword}
+                  name="password"
+                  id="userPassword"
+                  class="input_filed padding_small password_filed"
+                  placeholder="Enter your Password"
                   required
                 />
-                <label for="showpassword">Show Password</label>
-                <Link to='/Forgotpassword' class="forget_password">
-                <span>Forgot password ?</span>
-                </Link>
+                {showpassword === "password" ? (
+                  <i
+                    class="fa-solid fa-eye-slash eye_slash"
+                    onClick={showpasswordFun}
+                  ></i>
+                ) : (
+                  <i
+                    class="fa-solid fa-eye eye_slash"
+                    onClick={showpasswordFun}
+                  ></i>
+                )}
               </div>
+              <Link to="/Forgotpassword" class="forget_password">
+                <span>Forgot password ?</span>
+              </Link>
               <button type="submit" class="login_btn btn_style">
                 Login
               </button>

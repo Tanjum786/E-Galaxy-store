@@ -1,18 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Footer, Navbar } from "../../components";
+import { useloginsignup } from "../../hooks/context/loginSignup-context";
 import "./Authentication.css";
 
 export const Singup = () => {
+  const {showpassword,showpasswordFun}=useloginsignup();
   return (
     <>
       <div className="e_container">
-        <Navbar auth="Login" linkto='/login' />
+        <Navbar auth="Login" linkto="/login" />
         <section class="e_login_signup_container dis_flex">
           <form>
             <div class="login_signup_container signup_container gap_s dis_flex">
               <h1 class="login_signup_name">Sign Up</h1>
-              <label for="firstname">
+              <label htmlFor="firstname">
                 First Name<small class="star_color font_small">*</small>
               </label>
               <input
@@ -23,7 +25,7 @@ export const Singup = () => {
                 id="firstname"
                 required
               />
-              <label for="lastname">
+              <label htmlFor="lastname">
                 Last Name<small class="star_color font_small">*</small>
               </label>
               <input
@@ -33,7 +35,7 @@ export const Singup = () => {
                 placeholder="Enter your Last name"
                 required
               />
-              <label for="Email">
+              <label htmlFor="Email">
                 Email<small class="star_color font_small">*</small>
               </label>
               <input
@@ -42,7 +44,7 @@ export const Singup = () => {
                 class="input_filed padding_small"
                 placeholder="demo@demo.com"
               />
-              <label for="password_singup">
+              <label htmlFor="password_singup">
                 Password<small class="star_color font_small">*</small>
               </label>
               <input
@@ -52,24 +54,38 @@ export const Singup = () => {
                 placeholder="Enter your password"
                 required
               />
-              <label for="Confirm_pass">
+              <label htmlFor="Confirm_pass">
                 Confirm password<small class="star_color font_small">*</small>
               </label>
-              <input
-                type="password"
-                name="password"
-                class="input_filed padding_small"
-                placeholder="Enter your password again"
-                required
-              />
+              <div className="showpassword_container">
+                <input
+                  type={showpassword}
+                  name="password"
+                  class="input_filed padding_small password_filed"
+                  placeholder="Enter your Password again"
+                  required
+                />
+                {showpassword === "password" ? (
+                  <i
+                    class="fa-solid fa-eye-slash eye_slash"
+                    onClick={showpasswordFun}
+                  ></i>
+                ) : (
+                  <i
+                    class="fa-solid fa-eye eye_slash"
+                    onClick={showpasswordFun}
+                  ></i>
+                )}
+              </div>
               <div class="checkbox_section">
                 <input
                   type="checkbox"
                   name="checkbox"
                   class="input_filed padding_small"
+                  id="terms"
                   required
-                />
-                <label for="Terms">I accept all Terms & Conditions</label>
+                />{" "}
+                <label htmlFor="terms">I accept all Terms & Conditions</label>
               </div>
               <button type="submit" class="login_btn  btn_style">
                 Register
@@ -77,7 +93,7 @@ export const Singup = () => {
               <p class="new_account_link font_small">
                 Already have account?
                 <Link to="/login" class="alert_primary">
-                Login Here
+                  Login Here
                 </Link>
               </p>
             </div>
