@@ -11,10 +11,12 @@ import {
   Wishlist,
 } from "./pages";
 import { Footer } from "./components";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
     <div className="App">
+    <ToastContainer/>
       <Routes>
         <Route exact path="/" element={<LandingPage />} />
         <Route path="/login" element={<Login />} />
