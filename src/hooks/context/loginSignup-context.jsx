@@ -5,14 +5,14 @@ const loginsignupcontext=createContext();
 
 
 const LoginSignupProvider=(({children})=>{
-    const showpasswordFun = () => {
-        showpassword === "password"
-          ? setshowpassword("text")
-          : setshowpassword("password");
+    const showPasswordFun = () => {
+        showPassword === "password"
+          ? setShowPassword("text")
+          : setShowPassword("password");
       };
-    const [showpassword, setshowpassword] = useState("password");
+    const [showPassword, setShowPassword] = useState("password");
     return(
-        <loginsignupcontext.Provider value={{showpassword,setshowpassword,showpasswordFun}}>
+        <loginsignupcontext.Provider value={{showPassword,setShowPassword,showPasswordFun}}>
             {children}
         </loginsignupcontext.Provider>
     )

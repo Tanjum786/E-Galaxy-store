@@ -5,7 +5,7 @@ import { useloginsignup } from "../../hooks/context/loginSignup-context";
 import "./Authentication.css";
 
 export const Singup = () => {
-  const {showpassword,showpasswordFun}=useloginsignup();
+  const {showPassword,showPasswordFun}=useloginsignup();
   return (
     <>
       <div className="e_container">
@@ -59,21 +59,21 @@ export const Singup = () => {
               </label>
               <div className="showpassword_container">
                 <input
-                  type={showpassword}
+                  type={showPassword}
                   name="password"
                   class="input_filed padding_small password_filed"
                   placeholder="Enter your Password again"
                   required
                 />
-                {showpassword === "password" ? (
+                {showPassword === "password" ? (
                   <i
                     class="fa-solid fa-eye-slash eye_slash"
-                    onClick={showpasswordFun}
+                    onClick={showPasswordFun}
                   ></i>
                 ) : (
                   <i
                     class="fa-solid fa-eye eye_slash"
-                    onClick={showpasswordFun}
+                    onClick={showPasswordFun}
                   ></i>
                 )}
               </div>
