@@ -5,7 +5,6 @@ import { Categoryfun, RangeFun, RatingFun, Sortprice } from "../../../utils";
 import { imgWarning } from "../../../assets/images";
 import { useProducts } from "../../../hooks/context/cart-wishlistcontext";
 import { Link } from "react-router-dom";
-import { Toast } from "../../../components/Toast/Toast";
 
 export const Products = () => {
   const { filterState } = useFilter();
@@ -53,11 +52,7 @@ export const Products = () => {
                     <div className="product_wishlist_icon dis_flex">
                       <button
                         className="wishlist_btn"
-                        onClick={() => {
-                          Toast(
-                            `Successfuly added ${title} to the wishlist`,
-                            "success"
-                          );
+                        onClick={() =>
                           productDispatch({
                             type: "ADD_TO_WISHLIST",
                             payload: {
@@ -68,8 +63,8 @@ export const Products = () => {
                               rating: rating,
                               Quantity: Quantity,
                             },
-                          });
-                        }}
+                          })
+                        }
                       >
                         {productState.mywishlist.find(
                           (item) => item._id === _id
@@ -80,7 +75,7 @@ export const Products = () => {
                         )}
                       </button>
                     </div>
-                    <img src={img} alt="product-image" className="img_size" />
+                    <img src={img} alt="image" className="img_size" />
                   </div>
                   <div className="rating_container">
                     <span className="rating">
@@ -100,12 +95,7 @@ export const Products = () => {
                       </Link>
                     ) : (
                       <button
-                        onClick={() => {
-                          Toast(
-                            `Successfuly added ${title} to the cart`,
-                            "success"
-                          );
-
+                        onClick={() =>
                           productDispatch({
                             type: "ADD_TO_CART",
                             payload: {
@@ -116,8 +106,8 @@ export const Products = () => {
                               rating: rating,
                               Quantity: Quantity,
                             },
-                          });
-                        }}
+                          })
+                        }
                         className="add_to_cart bg_color padding_small"
                       >
                         Add To Cart
