@@ -80,7 +80,7 @@ export const Products = () => {
                         )}
                       </button>
                     </div>
-                    <img src={img} alt="image" className="img_size" />
+                    <img src={img} alt="product-image" className="img_size" />
                   </div>
                   <div className="rating_container">
                     <span className="rating">
