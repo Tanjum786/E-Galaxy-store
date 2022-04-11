@@ -29,7 +29,7 @@ const Wishlistcard = () => {
                   <i className="fas fa-heart"></i>
                 </button>
               </div>
-              <img src={img} alt="img" />
+              <img src={img} alt="product-img" />
             </div>
             <div className="wishlist_card_details padding_small dis_flex">
               <div className="title">{title}</div>
