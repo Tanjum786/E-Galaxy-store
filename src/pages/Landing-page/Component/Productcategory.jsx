@@ -14,9 +14,9 @@ const Productcategory = () => {
     <>
       {dataCata.map(({ img, categoryName }) => {
         return (
-          <div className="card_container">
+          <div className="card_container" key={_id}>
             <Link to="/product">
-              <img src={img} alt="img" />
+              <img src={img} alt="category-image" />
               <p className="card_overlay padding_small">{categoryName}</p>
             </Link>
           </div>

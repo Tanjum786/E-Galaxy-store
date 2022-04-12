@@ -1,4 +1,4 @@
 export {RatingFun} from './RatingFun';
-export {Sortprice} from './Sortprice';
+export {SortpriceFun} from './SortpriceFun';
 export {Categoryfun} from './Category';
 export {RangeFun} from './RangeFun'

@@ -2,18 +2,18 @@ import React from "react";
 import { wishlistimg } from "../../assets/images";
 import { Footer, Navbar } from "../../components";
 import { Link } from "react-router-dom";
-import { useProducts } from "../../hooks/context/cart-wishlistcontext";
+import { useProducts } from "../../hooks/context/cart-wishlist-context";
 import { Wishlistcard } from "./component/Wishlistcard";
 import "./wishlist.css";
 
 export const Wishlist = () => {
   const { productState } = useProducts();
-  const { mywishlist } = productState;
+  const { wishList } = productState;
   return (
     <>
       <div>
         <Navbar auth={"Login"} linkto={"/login"} />
-        {mywishlist.length <= 0 ? (
+        {wishList.length <= 0 ? (
           <div className="cart_div">
             <img className="empty_cart" src={wishlistimg} alt="empty-cart" />
             <div className="empty_container">
@@ -29,7 +29,7 @@ export const Wishlist = () => {
           <>
             <div>
               <h1 className="products_titel">
-                My wishlist : ({mywishlist.length})
+                My wishlist : ({wishList.length})
               </h1>
               <div className="title_underline"></div>
             </div>

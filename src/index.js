@@ -4,8 +4,8 @@ import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
 import { BrowserRouter } from "react-router-dom";
-import { FilterContextProvider } from "./hooks/context/filterProvider";
-import { CartProvider } from "./hooks/context/cart-wishlistcontext";
+import { FilterContextProvider } from "./hooks/context/filter-context";
+import { CartProvider } from "./hooks/context/cart-wishlist-context";
 
 // Call make Server
 makeServer();

@@ -1,9 +1,9 @@
-export const CartRedcerFun = (cartstate, cartaction) => {
-  const { mycart, mywishlist } = cartstate;
+export const CartReducerFun = (cartstate, cartaction) => {
+  const { cart, wishList } = cartstate;
 
   switch (cartaction.type) {
     case "ADD_TO_CART":
-      const CartItem = mycart.find(
+      const CartItem = cart.find(
         (item) => item._id === cartaction.payload._id
       );
       if (CartItem) {
@@ -13,12 +13,12 @@ export const CartRedcerFun = (cartstate, cartaction) => {
       }
       return {
         ...cartstate,
-        mycart: [...mycart, cartaction.payload],
+        cart: [...cart, cartaction.payload],
       };
     case "INCREASE":
       return {
         ...cartstate,
-        mycart: mycart.map((item) =>
+        cart: cart.map((item) =>
           item._id === cartaction.payload._id
             ? {
                 ...item,
@@ -30,7 +30,7 @@ export const CartRedcerFun = (cartstate, cartaction) => {
     case "DECREASE":
       return {
         ...cartstate,
-        mycart: mycart.map((item) =>
+        cart: cart.map((item) =>
           item._id === cartaction.payload._id
             ? {
                 ...item,
@@ -40,15 +40,15 @@ export const CartRedcerFun = (cartstate, cartaction) => {
         ),
       };
     case "REMOVE_FROM_CART":
-      const RemoveItem = mycart.filter(
+      const RemoveItem = cart.filter(
         (item) => item._id !== cartaction.payload._id
       );
       return {
         ...cartstate,
-        mycart: RemoveItem,
+        cart: RemoveItem,
       };
     case "ADD_TO_WISHLIST":
-      const wishlistItem = mywishlist.find(
+      const wishlistItem = wishList.find(
         (item) => item._id === cartaction.payload._id
       );
       if (wishlistItem) {
@@ -58,49 +58,49 @@ export const CartRedcerFun = (cartstate, cartaction) => {
       }
       return {
         ...cartstate,
-        mywishlist: [...mywishlist, cartaction.payload],
+        wishList: [...wishList, cartaction.payload],
       };
     case "MOVE_TO_WISHLIST":
-      const wishlistItems = mywishlist.find(
+      const wishlistItems = wishList.find(
         (item) => item._id === cartaction.payload._id
       );
       if (wishlistItems) {
         return {
           ...cartstate,
-          mycart: mycart.filter((item) => item._id != cartaction.payload._id),
+          cart: cart.filter((item) => item._id != cartaction.payload._id),
         };
       }
       return {
         ...cartstate,
-        mywishlist: [...mywishlist, cartaction.payload],
-        mycart: mycart.filter((item) => item._id != cartaction.payload._id),
+        wishList: [...wishList, cartaction.payload],
+        cart: cart.filter((item) => item._id != cartaction.payload._id),
       };
     case "MOVE_TO_CART":
-      const Movecart = mycart.find(
+      const Movecart = cart.find(
         (item) => item._id === cartaction.payload._id
       );
       if (Movecart) {
         return {
           ...cartstate,
-          mywishlist: mywishlist.filter(
+          wishList: wishList.filter(
             (item) => item._id != cartaction.payload._id
           ),
         };
       }
       return {
         ...cartstate,
-        mycart: [...mycart, cartaction.payload],
-        mywishlist: mywishlist.filter(
+        cart: [...cart, cartaction.payload],
+        wishList: wishList.filter(
           (item) => item._id != cartaction.payload._id
         ),
       };
     case "REMOVE_FROM_WISHLIST":
-      const RemoveWishList = mywishlist.filter(
+      const RemoveWishList = wishList.filter(
         (item) => item._id !== cartaction.payload._id
       );
       return {
         ...cartstate,
-        mywishlist: RemoveWishList,
+        wishList: RemoveWishList,
       };
 
     default:

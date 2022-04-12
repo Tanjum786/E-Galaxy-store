@@ -1,11 +1,11 @@
-import { useProducts } from "../../../hooks/context/cart-wishlistcontext";
+import { useProducts } from "../../../hooks/context/cart-wishlist-context";
 
 const Wishlistcard = () => {
   const { productState, productDispatch } = useProducts();
-  const { mywishlist } = productState;
+  const { wishList } = productState;
   return (
     <>
-      {mywishlist.map(({ img, title, price, _id, Quantity, rating }) => {
+      {wishList.map(({ img, title, price, _id, Quantity, rating }) => {
         return (
           <div className="wishlist_card">
             <div className="wishlist_img">
