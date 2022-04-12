@@ -1,4 +1,4 @@
-export const Sortprice = (product,{sortby}) => {
+export const SortpriceFun = (product,{sortby}) => {
     if (sortby==="HIGH-TO-LOW") {
         return ([...product].sort((a,b)=>b.price-a.price))
         

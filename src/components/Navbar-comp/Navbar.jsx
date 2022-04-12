@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useProducts } from "../../hooks/context/cart-wishlist-context";
 
 export const Navbar = ({ auth,linkto }) => {
+  const {productState}=useProducts();
+  const {cart,wishList}=productState;
   return (
     <div className="nav_container">
     <nav className="nav_bar">
@@ -37,14 +40,14 @@ export const Navbar = ({ auth,linkto }) => {
               <i className="icon_nav fa fa-heart-o"></i>
             </Link>
             <p className="badge_wishlist font_small dis_flex padding_small">
-              0
+             { wishList.length}
             </p>
           </li>
           <li className="list-item-inline">
             <Link to="/cart">
               <i className="icon_nav fas fa-shopping-cart"></i>
             </Link>
-            <p className="badge_cart font_small dis_flex padding_small">0</p>
+            <p className="badge_cart font_small dis_flex padding_small">{cart.length}</p>
           </li>
           <li className="list-item-inline">
             <Link to="/add usre">

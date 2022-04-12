@@ -1,36 +1,45 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./cart.css";
 import { Navbar } from "../../components";
 import { Cardcart } from "./component/Cardcart";
-import { image7 } from "../../assets/images";
 import { Cartbill } from "./component/Cartbill";
+import { useProducts } from "../../hooks/context/cart-wishlist-context";
+import { Emptycartimg } from "../../assets/images";
 
 export const Cart = () => {
+  const { productState } = useProducts();
+  const { cart } = productState;
   return (
     <div>
       <Navbar auth={"Login"} linkto={"/login"} />
-      <div>
-        <h1 className="headline">My Cart</h1>
-        <div className="title_underline"></div>
-      </div>
-      <section className="cart_container dis_flex">
-        <Cartbill
-          price={250}
-          DiscAmt={250}
-          DeliveryAmt={0}
-          SaveAmt={250}
-          TotalAmt={250}
-          cartitem={1}
-        />
-        <Cardcart
-          cardtitle={"SOM2SOM Women Solid Straight Kurta"}
-          cartimg={image7}
-          cartprice={"Rs.250"}
-          cutprice={"Rs.500"}
-          discount={"50%"}
-          Quantity={"Quantity :"}
-        />
-      </section>
+      {cart.length <= 0 ? (
+        <div className="cart_div">
+          <img className="empty_cart" src={Emptycartimg} alt="empty-cart" />
+          <div className="empty_container">
+            <h1>Your Cart is Empty</h1>
+            <Link to="/product">
+              <button className="product_btn padding_small font_small">
+                Shop Now
+              </button>
+            </Link>
+          </div>
+        </div>
+      ) : (
+        <>
+          <div>
+            <h1 className="products_titel">My Cart : ({cart.length})</h1>
+            <div className="title_underline"></div>
+          </div>
+          <section className="cart_container dis_flex">
+            <div>
+              <Cardcart />
+            </div>
+
+            <Cartbill />
+          </section>
+        </>
+      )}
     </div>
   );
 };
