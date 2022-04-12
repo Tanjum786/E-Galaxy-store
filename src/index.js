@@ -7,6 +7,8 @@ import { BrowserRouter } from "react-router-dom";
 import { FilterContextProvider } from "./hooks/context/filterProvider";
 import { CartProvider } from "./hooks/context/cart-wishlistcontext";
 import { LoginSignupProvider } from "./hooks/context/loginSignup-context";
+import { FilterContextProvider } from "./hooks/context/filter-context";
+import { CartProvider } from "./hooks/context/cart-wishlist-context";
 
 // Call make Server
 makeServer();

@@ -4,16 +4,16 @@ import "./cart.css";
 import { Navbar } from "../../components";
 import { Cardcart } from "./component/Cardcart";
 import { Cartbill } from "./component/Cartbill";
-import { useProducts } from "../../hooks/context/cart-wishlistcontext";
+import { useProducts } from "../../hooks/context/cart-wishlist-context";
 import { Emptycartimg } from "../../assets/images";
 
 export const Cart = () => {
   const { productState } = useProducts();
-  const { mycart } = productState;
+  const { cart } = productState;
   return (
     <div>
       <Navbar auth={"Login"} linkto={"/login"} />
-      {mycart.length <= 0 ? (
+      {cart.length <= 0 ? (
         <div className="cart_div">
           <img className="empty_cart" src={Emptycartimg} alt="empty-cart" />
           <div className="empty_container">
@@ -28,7 +28,7 @@ export const Cart = () => {
       ) : (
         <>
           <div>
-            <h1 className="products_titel">My Cart : ({mycart.length})</h1>
+            <h1 className="products_titel">My Cart : ({cart.length})</h1>
             <div className="title_underline"></div>
           </div>
           <section className="cart_container dis_flex">
