@@ -1,10 +1,10 @@
-import { useProducts } from "../../../hooks/context/cart-wishlistcontext";
+import { useProducts } from "../../../hooks/context/cart-wishlist-context";
 
 const Cartbill = () => {
   const { productState } = useProducts();
-  const { mycart } = productState;
+  const { cart } = productState;
 
-  const Price = mycart.reduce(
+  const Price = cart.reduce(
     (accum, value) => value.price * 2 * value.Quantity + accum,
     0
   );
@@ -17,7 +17,7 @@ const Cartbill = () => {
         <h3 className="price_title">Price Details</h3>
         <hr />
         <li className="li_flex dis_flex">
-          <p className="cart_items font_small">price({mycart.length} items)</p>
+          <p className="cart_items font_small">price({cart.length} items)</p>
           <p className="cart_items font_small"> ₹{Price}</p>
         </li>
         <li className="li_flex dis_flex">

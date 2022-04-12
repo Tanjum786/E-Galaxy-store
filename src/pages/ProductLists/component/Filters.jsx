@@ -1,5 +1,5 @@
 import React from "react";
-import { useFilter } from "../../../hooks/context/filterProvider";
+import { useFilter } from "../../../hooks/context/filter-context";
 
 export const Filters = () => {
   const { filterState, filterDispatch } = useFilter();

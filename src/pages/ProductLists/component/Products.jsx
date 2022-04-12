@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useFilter } from "../../../hooks/context/filterProvider";
-import { Categoryfun, RangeFun, RatingFun, Sortprice } from "../../../utils";
+import { useFilter } from "../../../hooks/context/filter-context";
+import { Categoryfun, RangeFun, RatingFun, SortpriceFun } from "../../../utils";
 import { imgWarning } from "../../../assets/images";
-import { useProducts } from "../../../hooks/context/cart-wishlistcontext";
+import { useProducts } from "../../../hooks/context/cart-wishlist-context";
 import { Link } from "react-router-dom";
 import { Toast } from "../../../components/Toast/Toast";
 
@@ -13,7 +13,7 @@ export const Products = () => {
   const [res, setRes] = useState([]);
   const [loading, setloding] = useState("");
 
-  const { mycart } = productState;
+  const { cart } = productState;
 
   const dataFetch = async () => {
     setloding("Loading.....");
@@ -23,7 +23,7 @@ export const Products = () => {
   };
   useEffect(dataFetch, []);
 
-  const SortProduct = Sortprice(res, filterState);
+  const SortProduct = SortpriceFun(res, filterState);
   const RatingProduct = RatingFun(SortProduct, filterState);
   const RangeProduct = RangeFun(RatingProduct, filterState);
   const CategoryProduct = Categoryfun(RangeProduct, filterState);
@@ -45,10 +45,10 @@ export const Products = () => {
         <div className="all_cards_container dis_flex">
           {CategoryProduct.map(
             ({ img, rating, title, price, _id, Quantity }) => {
-              const isaddedTocart = mycart.some((item) => item._id === _id);
+              const isaddedTocart = cart.some((item) => item._id === _id);
 
               return (
-                <div className="product_card bg_color">
+                <div className="product_card bg_color" key={_id}>
                   <div className="product_card_img">
                     <div className="product_wishlist_icon dis_flex">
                       <button
@@ -71,7 +71,7 @@ export const Products = () => {
                           });
                         }}
                       >
-                        {productState.mywishlist.find(
+                        {productState.wishList.find(
                           (item) => item._id === _id
                         ) ? (
                           <i className="fa fa-heart color-btn"></i>
