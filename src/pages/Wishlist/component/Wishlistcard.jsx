@@ -1,4 +1,3 @@
-import { useProducts } from "../../../hooks/context/cart-wishlistcontext";
 import { Toast } from "../../../components/Toast/Toast";
 import { useProducts } from "../../../hooks/context/cart-wishlist-context";
 
