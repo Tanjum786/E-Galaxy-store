@@ -12,7 +12,7 @@ const Productcategory = () => {
   
   return (
     <>
-      {dataCata.map(({ img, categoryName }) => {
+      {dataCata.map(({ img, categoryName,_id }) => {
         return (
           <div className="card_container" key={_id}>
             <Link to="/product">

@@ -5,6 +5,7 @@ import { Categoryfun, RangeFun, RatingFun, SortpriceFun } from "../../../utils";
 import { imgWarning } from "../../../assets/images";
 import { useProducts } from "../../../hooks/context/cart-wishlist-context";
 import { Link } from "react-router-dom";
+import { Toast } from "../../../components/Toast/Toast";
 
 export const Products = () => {
   const { filterState } = useFilter();
@@ -52,7 +53,11 @@ export const Products = () => {
                     <div className="product_wishlist_icon dis_flex">
                       <button
                         className="wishlist_btn"
-                        onClick={() =>
+                        onClick={() => {
+                          Toast(
+                            `Successfuly added ${title} to the wishlist`,
+                            "success"
+                          );
                           productDispatch({
                             type: "ADD_TO_WISHLIST",
                             payload: {
@@ -63,8 +68,8 @@ export const Products = () => {
                               rating: rating,
                               Quantity: Quantity,
                             },
-                          })
-                        }
+                          });
+                        }}
                       >
                         {productState.wishList.find(
                           (item) => item._id === _id
@@ -95,7 +100,12 @@ export const Products = () => {
                       </Link>
                     ) : (
                       <button
-                        onClick={() =>
+                        onClick={() => {
+                          Toast(
+                            `Successfuly added ${title} to the cart`,
+                            "success"
+                          );
+
                           productDispatch({
                             type: "ADD_TO_CART",
                             payload: {
@@ -106,8 +116,8 @@ export const Products = () => {
                               rating: rating,
                               Quantity: Quantity,
                             },
-                          })
-                        }
+                          });
+                        }}
                         className="add_to_cart bg_color padding_small"
                       >
                         Add To Cart
