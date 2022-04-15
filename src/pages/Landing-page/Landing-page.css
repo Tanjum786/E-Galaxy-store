@@ -74,7 +74,7 @@ h5,
       #fecdd3,
       #fef2f2,
       #bbf7d0);
-  filter:drop-shadow(8px 8px 10px var(--gray-color));
+  filter: drop-shadow(8px 8px 10px var(--gray-color));
 }
 
 .e_sales,
@@ -173,6 +173,10 @@ h5,
 .logo_container {
   border: none;
   box-shadow: 2px 2px 2px 2px var(--gray-color);
+}
+
+.card_overlay {
+  width: 100%
 }
 
 .badge_wishlist {

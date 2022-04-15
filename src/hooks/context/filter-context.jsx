@@ -6,9 +6,9 @@ const FilterContextProvider = ({ children }) => {
   const [filterState, filterDispatch] = useReducer(FilterReducerFun, {
     instock: false,
     sortby: "",
-    CatagoryMen: false,
-    CatagoryWomen: false,
-    CatagoryKids: false,
+    CategoryMen: false,
+    CategoryWomen: false,
+    CategoryKids: false,
     Rating: "",
     PriceValue: 3000
   });

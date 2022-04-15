@@ -3,7 +3,7 @@ import { useFilter } from "../../../hooks/context/filter-context";
 
 export const Filters = () => {
   const { filterState, filterDispatch } = useFilter();
-  const { CatagoryKids, CatagoryMen, CatagoryWomen, PriceValue,Rating,sortby} = filterState;
+  const { CategoryKids, CategoryMen, CategoryWomen, PriceValue,Rating,sortby} = filterState;
   return (
     <>
       <div className="fillter_container bg_color font_small dis_flex">
@@ -48,7 +48,7 @@ export const Filters = () => {
                       type="checkbox"
                       id="mens_cloth"
                       name="cloths"
-                      checked={CatagoryMen}
+                      checked={CategoryMen}
                       onChange={(e) =>
                         filterDispatch({
                           type: "MEN",
@@ -64,7 +64,7 @@ export const Filters = () => {
                       type="checkbox"
                       id="kids_cloth"
                       name="cloths"
-                      checked={CatagoryKids}
+                      checked={CategoryKids}
                       onChange={(e) =>
                         filterDispatch({
                           type: "KIDS",
@@ -80,7 +80,7 @@ export const Filters = () => {
                       type="checkbox"
                       id="womens_cloth"
                       name="cloths"
-                      checked={CatagoryWomen}
+                      checked={CategoryWomen}
                       onChange={(e) =>
                         filterDispatch({
                           type: "WOMEN",

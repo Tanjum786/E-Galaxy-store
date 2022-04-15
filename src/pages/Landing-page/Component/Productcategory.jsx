@@ -1,27 +1,35 @@
-import axios from "axios";
-import { Link } from "react-router-dom";
-import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
+import { useFilter } from "../../../hooks/context/filter-context";
 
-const Productcategory = () => {
-  const [dataCata, setdataCata] = useState([]);
-  const cataDatafetch = async () => {
-    const response = await axios.get("/api/categories");
-    setdataCata(response.data.categories);
-  };
-  useEffect(cataDatafetch, []);
-  
+
+const Productcategory = ({ productImage, categoryName }) => {
+  const {filterState, filterDispatch}=useFilter();
+
+  const categoryHandler=((categoryName)=>{
+    if (categoryName==="Men's wear") {
+      filterDispatch({type:"CLEAR_CATEGORY"})
+      filterDispatch({type:"MEN",payload:categoryName})
+    
+      
+    }
+    else if (categoryName==="women's wear") {
+      filterDispatch({type:"CLEAR_CATEGORY"})
+      filterDispatch({type:"WOMEN",payload:categoryName})
+
+  }
+  else if (categoryName==="Kid's wear") {
+    filterDispatch({type:"CLEAR_CATEGORY"})
+    filterDispatch({type:"KIDS",payload:categoryName})
+  }})
+
   return (
     <>
-      {dataCata.map(({ img, categoryName,_id }) => {
-        return (
-          <div className="card_container" key={_id}>
-            <Link to="/product">
-              <img src={img} alt="category-image" />
-              <p className="card_overlay padding_small">{categoryName}</p>
-            </Link>
-          </div>
-        );
-      })}
+    <NavLink to={'/product'} onClick={()=>categoryHandler(categoryName)}>
+      <div className="card_container">
+        <img src={productImage} alt="category-image" />
+        <p className="card_overlay padding_small">{categoryName}</p>
+      </div>
+      </NavLink>
     </>
   );
 };
