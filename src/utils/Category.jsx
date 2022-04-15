@@ -1,4 +1,4 @@
-export const Categoryfun = (product, {CategoryMen, CategoryWomen, CaeagoryKids}) => {
+export const Categoryfun = (product, {CategoryMen, CategoryWomen, CategoryKids}) => {
     let allCategory = [];
   if (
     CategoryMen === false &&
