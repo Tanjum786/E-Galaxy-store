@@ -5,6 +5,9 @@ import {
   image2,
   image4,
   image3,
+  image5,
+  image6,
+  image7,
 } from "../../assets/images";
 import { Navbar } from "../../components";
 import { Productcategory } from "./Component/Productcategory";
@@ -39,7 +42,21 @@ export const LandingPage = () => {
           <h3 className="category_heading"> Top Categories </h3>
           <div className="title_underline"> </div>
           <div className="categorey_list dis_flex">
-          <Productcategory/>
+            <Productcategory
+              productImage={image5}
+              cardAlt={"image"}
+              categoryName="Kid's wear"
+            />
+            <Productcategory
+              productImage={image6}
+              cardAlt={"image"}
+              categoryName="Men's wear"
+            />
+            <Productcategory
+              productImage={image7}
+              cardAlt={"image"}
+              categoryName="women's wear"
+            />
           </div>
         </div>
         <div className="categorey_container">

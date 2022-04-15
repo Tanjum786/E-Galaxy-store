@@ -26,8 +26,21 @@ export const FilterReducerFun = (filterState, filterAction) => {
 
     case "KIDS":
       return { ...filterState, CatagoryKids: filterAction.payload };
+
     case "RANGE":
       return { ...filterState, PriceValue: filterAction.payload };
+
+    case "CLEAR_CATEGORY":
+      const newfilterstate = { ...filterState };
+      for (let property in newfilterstate) {
+        if (property.includes("Catagory")) {
+          newfilterstate[property] = false;
+        }
+      }
+      return {
+        ...newfilterstate,
+      };
+
     case "RESET":
       return {
         instock: false,
