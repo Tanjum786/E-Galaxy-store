@@ -19,35 +19,35 @@ export const FilterReducerFun = (filterState, filterAction) => {
       return { ...filterState, Rating: filterAction.type };
 
     case "MEN":
-      return { ...filterState, CatagoryMen: filterAction.payload };
+      return { ...filterState, CategoryMen: filterAction.payload };
 
     case "WOMEN":
-      return { ...filterState, CatagoryWomen: filterAction.payload };
+      return { ...filterState, CategoryWomen: filterAction.payload };
 
     case "KIDS":
-      return { ...filterState, CatagoryKids: filterAction.payload };
+      return { ...filterState, CategoryKids: filterAction.payload };
 
     case "RANGE":
       return { ...filterState, PriceValue: filterAction.payload };
 
     case "CLEAR_CATEGORY":
-      const newfilterstate = { ...filterState };
-      for (let property in newfilterstate) {
-        if (property.includes("Catagory")) {
-          newfilterstate[property] = false;
+      const newFilterState = { ...filterState };
+      for (let property in newFilterState) {
+        if (property.includes("Category")) {
+          newFilterState[property] = false;
         }
       }
       return {
-        ...newfilterstate,
+        ...newFilterState,
       };
 
     case "RESET":
       return {
         instock: false,
         sortby: "",
-        CatagoryMen: false,
-        CatagoryWomen: false,
-        CatagoryKids: false,
+        CategoryMen: false,
+        CategoryWomen: false,
+        CategoryKids: false,
         Rating: "",
         PriceValue: 3000,
       };

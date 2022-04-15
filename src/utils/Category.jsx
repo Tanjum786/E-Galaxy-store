@@ -1,23 +1,23 @@
-export const Categoryfun = (product, {CatagoryMen, CatagoryWomen, CatagoryKids}) => {
+export const Categoryfun = (product, {CategoryMen, CategoryWomen, CaeagoryKids}) => {
     let allCategory = [];
   if (
-    CatagoryMen === false &&
-    CatagoryWomen === false &&
-    CatagoryKids === false
+    CategoryMen === false &&
+    CategoryWomen === false &&
+    CategoryKids === false
   ) {
     allCategory = product;
   }
-  if (CatagoryMen) {
+  if (CategoryMen) {
     allCategory = allCategory.concat(
       product.filter((items) =>items.categoryName==="Men's wear")
     );
   }
-  if (CatagoryWomen) {
+  if (CategoryWomen) {
     allCategory = allCategory.concat(
       product.filter((items) => items.categoryName==="women's wear" )
     );
   }
-  if (CatagoryKids) {
+  if (CategoryKids) {
     allCategory = allCategory.concat(
       product.filter((items) => items.categoryName==="Kid's wear")
     );
