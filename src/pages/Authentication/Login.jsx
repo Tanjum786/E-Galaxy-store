@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Navbar } from "../../components";
-import { useloginsignup } from "../../hooks/context/loginSignup-context";
+import { useloginsignup } from "../../Context";
 import "./Authentication.css";
 
 export const Login = () => {

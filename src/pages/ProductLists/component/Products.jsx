@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useFilter } from "../../../hooks/context/filter-context";
 import { Categoryfun, RangeFun, RatingFun, SortpriceFun } from "../../../utils";
 import { imgWarning } from "../../../assets/images";
-import { useProducts } from "../../../hooks/context/cart-wishlist-context";
 import { Link } from "react-router-dom";
-import { Toast } from "../../../components/Toast/Toast";
+import { Toast } from "../../../components/Toast";
+import { useFilter, useProducts } from "../../../Context";
 
 export const Products = () => {
   const { filterState } = useFilter();

@@ -1,5 +1,5 @@
-import { Toast } from "../../../components/Toast/Toast";
-import { useProducts } from "../../../hooks/context/cart-wishlist-context";
+import { Toast } from "../../../components/Toast";
+import { useProducts } from "../../../Context";
 
 const Wishlistcard = () => {
   const { productState, productDispatch } = useProducts();

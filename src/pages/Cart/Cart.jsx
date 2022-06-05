@@ -2,10 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./cart.css";
 import { Navbar } from "../../components";
-import { Cardcart } from "./component/Cardcart";
-import { Cartbill } from "./component/Cartbill";
-import { useProducts } from "../../hooks/context/cart-wishlist-context";
 import { Emptycartimg } from "../../assets/images";
+import { useProducts } from "../../Context";
+import { Cardcart, Cartbill } from "./component";
 
 export const Cart = () => {
   const { productState } = useProducts();

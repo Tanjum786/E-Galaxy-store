@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Footer, Navbar } from "../../components";
-import { useloginsignup } from "../../hooks/context/loginSignup-context";
+import { Navbar } from "../../components";
+import { useloginsignup } from "../../Context";
 import "./Authentication.css";
 
 export const Singup = () => {
-  const {showPassword,showPasswordFun}=useloginsignup();
+  const { showPassword, showPasswordFun } = useloginsignup();
   return (
     <>
       <div className="e_container">
