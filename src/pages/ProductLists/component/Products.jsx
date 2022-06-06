@@ -3,8 +3,8 @@ import axios from "axios";
 import { Categoryfun, RangeFun, RatingFun, SortpriceFun } from "../../../utils";
 import { imgWarning } from "../../../assets/images";
 import { Link } from "react-router-dom";
-import { Toast } from "../../../components/Toast";
 import { useFilter, useProducts } from "../../../Context";
+import { Toast } from "../../../components";
 
 export const Products = () => {
   const { filterState } = useFilter();

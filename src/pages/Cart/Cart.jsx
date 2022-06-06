@@ -11,7 +11,7 @@ export const Cart = () => {
   const { cart } = productState;
   return (
     <div>
-      <Navbar auth={"Login"} linkto={"/login"} />
+      <Navbar/>
       {cart.length <= 0 ? (
         <div className="cart_div">
           <img className="empty_cart" src={Emptycartimg} alt="empty-cart" />
