@@ -5,6 +5,7 @@ import App from "./App";
 import { makeServer } from "./server";
 import { BrowserRouter } from "react-router-dom";
 import {
+  AuthProvider,
   CartProvider,
   FilterContextProvider,
   LoginSignupProvider,
@@ -18,9 +19,11 @@ ReactDOM.render(
     <BrowserRouter>
       <FilterContextProvider>
         <CartProvider>
-          <LoginSignupProvider>
-            <App />
-          </LoginSignupProvider>
+          <AuthProvider>
+            <LoginSignupProvider>
+              <App />
+            </LoginSignupProvider>
+          </AuthProvider>
         </CartProvider>
       </FilterContextProvider>
     </BrowserRouter>
