@@ -2,15 +2,22 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Categoryfun, RangeFun, RatingFun, SortpriceFun } from "../../../utils";
 import { imgWarning } from "../../../assets/images";
-import { Link } from "react-router-dom";
-import { useFilter, useProducts } from "../../../Context";
+import { Link, useNavigate } from "react-router-dom";
 import { Toast } from "../../../components";
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+import { useFilter, useProducts } from "../../../Context";
+import { addToWishlist, removeFromWishlist } from "../../../Apicalls";
 
 export const Products = () => {
   const { filterState } = useFilter();
   const { productState, productDispatch } = useProducts();
+  const { wishList } = productState;
   const [res, setRes] = useState([]);
   const [loading, setloding] = useState("");
+  const navigate = useNavigate();
+  
+  const token=localStorage.getItem("token")
+  const user=localStorage.getItem("users")
 
   const { cart } = productState;
 
@@ -21,6 +28,22 @@ export const Products = () => {
     setloding("");
   };
   useEffect(dataFetch, []);
+
+  const addToWishlistHandler = (product) => {
+    const checkwishlist = wishList?.some((item) => item._id === product._id);
+    if (token && user) {
+      if (!checkwishlist) {
+        addToWishlist(product, token, productDispatch);
+        Toast(`successfully added ${product.title} to the wishlist`, "success");
+      }
+    } else {
+      navigate("/login");
+    }
+  };
+
+  const removeWishlistHandler = (_id) => {
+    removeFromWishlist(_id, token, productDispatch);
+  };
 
   const SortProduct = SortpriceFun(res, filterState);
   const RatingProduct = RatingFun(SortProduct, filterState);
@@ -50,34 +73,30 @@ export const Products = () => {
                 <div className="product_card bg_color" key={_id}>
                   <div className="product_card_img">
                     <div className="product_wishlist_icon dis_flex">
-                      <button
-                        className="wishlist_btn"
-                        onClick={() => {
-                          Toast(
-                            `Successfuly added ${title} to the wishlist`,
-                            "success"
-                          );
-                          productDispatch({
-                            type: "ADD_TO_WISHLIST",
-                            payload: {
-                              img: img,
-                              title: title,
-                              price: price,
-                              _id: _id,
-                              rating: rating,
-                              Quantity: Quantity,
-                            },
-                          });
-                        }}
-                      >
-                        {productState.wishList.find(
-                          (item) => item._id === _id
-                        ) ? (
-                          <i className="fa fa-heart color-btn"></i>
-                        ) : (
-                          <i className="fa fa-heart-o color-btn"></i>
-                        )}
-                      </button>
+                      {wishList?.some(
+                        (item) => item._id === _id
+                      ) ? (
+                        <AiFillHeart
+                          size="1.4rem"
+                          className="wishlist_btn color-btn"
+                          onClick={() => removeWishlistHandler(_id)}
+                        />
+                      ) : (
+                        <AiOutlineHeart
+                          size="1.4rem"
+                          className="wishlist_btn color-btn"
+                          onClick={() =>
+                            addToWishlistHandler({
+                              img,
+                              rating,
+                              title,
+                              price,
+                              _id,
+                              Quantity,
+                            })
+                          }
+                        />
+                      )}
                     </div>
                     <img src={img} alt="product-image" className="img_size" />
                   </div>

@@ -13,7 +13,7 @@ export const Wishlist = () => {
     <>
       <div>
         <Navbar auth={"Login"} linkto={"/login"} />
-        {wishList.length <= 0 ? (
+        {wishList?.length <= 0 ? (
           <div className="cart_div">
             <img className="empty_cart" src={wishlistimg} alt="empty-cart" />
             <div className="empty_container">
@@ -29,7 +29,7 @@ export const Wishlist = () => {
           <>
             <div>
               <h1 className="products_titel">
-                My wishlist : ({wishList.length})
+                My wishlist : ({wishList?.length})
               </h1>
               <div className="title_underline"></div>
             </div>

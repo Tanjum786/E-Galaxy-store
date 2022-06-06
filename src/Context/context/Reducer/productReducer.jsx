@@ -48,17 +48,9 @@ export const ProductReducerFun = (productstate, productAction) => {
         cart: RemoveItem,
       };
     case "ADD_TO_WISHLIST":
-      const wishlistItem = wishList.find(
-        (item) => item._id === productAction.payload._id
-      );
-      if (wishlistItem) {
-        return {
-          ...productstate,
-        };
-      }
       return {
         ...productstate,
-        wishList: [...wishList, productAction.payload],
+        wishList: productAction.payload,
       };
     case "MOVE_TO_WISHLIST":
       const wishlistItems = wishList.find(
@@ -86,13 +78,14 @@ export const ProductReducerFun = (productstate, productAction) => {
             (item) => item._id != productAction.payload._id
           ),
           cart: cart.map((item) =>
-          item._id === productAction.payload._id
-            ? {
-                ...item,
-                Quantity: item.Quantity < 5 ? item.Quantity + 1 : item.Quantity,
-              }
-            : item
-        ),
+            item._id === productAction.payload._id
+              ? {
+                  ...item,
+                  Quantity:
+                    item.Quantity < 5 ? item.Quantity + 1 : item.Quantity,
+                }
+              : item
+          ),
         };
       }
       return {
@@ -103,12 +96,9 @@ export const ProductReducerFun = (productstate, productAction) => {
         ),
       };
     case "REMOVE_FROM_WISHLIST":
-      const RemoveWishList = wishList.filter(
-        (item) => item._id !== productAction.payload._id
-      );
       return {
         ...productstate,
-        wishList: RemoveWishList,
+        wishList: productAction.payload,
       };
 
     default:

@@ -72,7 +72,7 @@ export const Navbar = () => {
                   <i className="icon_nav fa fa-heart-o"></i>
                 </Link>
                 <p className="badge_wishlist font_small dis_flex padding_small">
-                  {wishList.length}
+                {wishList?.length >= 1 ? wishList.length : 0}
                 </p>
               </div>
             </li>

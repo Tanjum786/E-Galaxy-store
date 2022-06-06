@@ -1,12 +1,15 @@
+import { removeFromWishlist } from "../../../Apicalls";
 import { Toast } from "../../../components";
-import { useProducts } from "../../../Context";
+import { useAuth, useProducts } from "../../../Context";
 
 const Wishlistcard = () => {
   const { productState, productDispatch } = useProducts();
   const { wishList } = productState;
+  const {userDetailes}=useAuth()
+  const {token}=userDetailes
   return (
     <>
-      {wishList.map(({ img, title, price, _id, Quantity, rating }) => {
+      {wishList?.map(({ img, title, price, _id, Quantity, rating }) => {
         return (
           <div className="wishlist_card">
             <div className="wishlist_img">
@@ -14,21 +17,11 @@ const Wishlistcard = () => {
                 <button
                   className="wish-btn"
                   onClick={() => {
+                    removeFromWishlist(_id, token, productDispatch);
                     Toast(
                       `Successfuly Removed ${title} from wishlist`,
                       "success"
                     );
-                    productDispatch({
-                      type: "REMOVE_FROM_WISHLIST",
-                      payload: {
-                        img: img,
-                        title: title,
-                        price: price,
-                        _id: _id,
-                        rating: rating,
-                        Quantity: Quantity,
-                      },
-                    });
                   }}
                 >
                   <i className="fas fa-heart"></i>
