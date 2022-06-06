@@ -29,7 +29,7 @@ export const Wishlist = () => {
           <>
             <div>
               <h1 className="products_titel">
-                My wishlist : ({wishList?.length})
+                My wishlist : ({wishList?.length>1?wishList.length:0})
               </h1>
               <div className="title_underline"></div>
             </div>

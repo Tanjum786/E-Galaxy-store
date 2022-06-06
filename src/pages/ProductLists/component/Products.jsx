@@ -6,7 +6,11 @@ import { Link, useNavigate } from "react-router-dom";
 import { Toast } from "../../../components";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { useFilter, useProducts } from "../../../Context";
-import { addToWishlist, removeFromWishlist } from "../../../Apicalls";
+import {
+  addTocart,
+  addToWishlist,
+  removeFromWishlist,
+} from "../../../Apicalls";
 
 export const Products = () => {
   const { filterState } = useFilter();
@@ -15,9 +19,9 @@ export const Products = () => {
   const [res, setRes] = useState([]);
   const [loading, setloding] = useState("");
   const navigate = useNavigate();
-  
-  const token=localStorage.getItem("token")
-  const user=localStorage.getItem("users")
+
+  const token = localStorage.getItem("token");
+  const user = localStorage.getItem("users");
 
   const { cart } = productState;
 
@@ -38,6 +42,18 @@ export const Products = () => {
       }
     } else {
       navigate("/login");
+      Toast("Your are not logedin", "warning");
+    }
+  };
+
+  const addtoCartHandler = (product) => {
+    if (token && user) {
+      addTocart( product,token , productDispatch);
+      Toast(`successfully added ${product.title} to the cart`, "success");
+
+    } else {
+      navigate("/login");
+      Toast("Your are not logedin", "warning");
     }
   };
 
@@ -73,9 +89,7 @@ export const Products = () => {
                 <div className="product_card bg_color" key={_id}>
                   <div className="product_card_img">
                     <div className="product_wishlist_icon dis_flex">
-                      {wishList?.some(
-                        (item) => item._id === _id
-                      ) ? (
+                      {wishList?.some((item) => item._id === _id) ? (
                         <AiFillHeart
                           size="1.4rem"
                           className="wishlist_btn color-btn"
@@ -118,24 +132,16 @@ export const Products = () => {
                       </Link>
                     ) : (
                       <button
-                        onClick={() => {
-                          Toast(
-                            `Successfuly added ${title} to the cart`,
-                            "success"
-                          );
-
-                          productDispatch({
-                            type: "ADD_TO_CART",
-                            payload: {
-                              img: img,
-                              title: title,
-                              price: price,
-                              _id: _id,
-                              rating: rating,
-                              Quantity: Quantity,
-                            },
-                          });
-                        }}
+                        onClick={() =>
+                          addtoCartHandler({
+                            img,
+                            _id,
+                            title,
+                            price,
+                            Quantity,
+                            rating,
+                          })
+                        }
                         className="add_to_cart bg_color padding_small"
                       >
                         Add To Cart

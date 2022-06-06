@@ -1,15 +1,30 @@
-import { removeFromWishlist } from "../../../Apicalls";
+import { addTocart, removeFromWishlist, updateCart } from "../../../Apicalls";
 import { Toast } from "../../../components";
 import { useAuth, useProducts } from "../../../Context";
 
 const Wishlistcard = () => {
   const { productState, productDispatch } = useProducts();
-  const { wishList } = productState;
-  const {userDetailes}=useAuth()
-  const {token}=userDetailes
+  const { wishList, cart } = productState;
+  const { userDetailes } = useAuth();
+  const { token } = userDetailes;
+
+  const moveTocartHandler = (product) => {
+    const items = cart?.find((item) => item._id === product._id);
+    if (items) {
+      updateCart(product._id, "increment", token, productDispatch);
+      Toast(
+        `${product.title} already exists in cart, increased it's quantity`,
+        "warn"
+      );
+    } else {
+      addTocart(product, token, productDispatch);
+      removeFromWishlist(product._id, token, productDispatch);
+      Toast(`Successfuly aded ${product.title} to cart`, "success");
+    }
+  };
   return (
     <>
-      {wishList?.map(({ img, title, price, _id, Quantity, rating }) => {
+      {wishList?.map(({ img, title, price, Quantity, _id }) => {
         return (
           <div className="wishlist_card">
             <div className="wishlist_img">
@@ -39,17 +54,7 @@ const Wishlistcard = () => {
               <button
                 className="e_secondary_btn padding_small"
                 onClick={() => {
-                  Toast(`Successfuly Moved ${title} to cart`, "success");
-                  productDispatch({
-                    type: "MOVE_TO_CART",
-                    payload: {
-                      img: img,
-                      title: title,
-                      price: price,
-                      Quantity: Quantity,
-                      _id: _id,
-                    },
-                  });
+                  moveTocartHandler({ img, title, price, Quantity, _id });
                 }}
               >
                 Move to Cart<i className="fa fa-shopping-cart cart_btn"></i>
