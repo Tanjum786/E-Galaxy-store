@@ -3,6 +3,12 @@
   justify-content: center;
 }
 
+button.guestLogin {
+  background-color: var(--pureWhite-color);
+  color: var(--black-color);
+  border: 1px solid var(--primary-color);
+}
+
 .login_btn,
 .login_signup_name {
   text-align: center;
@@ -13,6 +19,11 @@
   position: absolute;
   bottom: 0rem;
   left: 0rem;
+}
+
+.logout_btn {
+  height: 2rem;
+  margin-top: 0.5rem;
 }
 
 .login_signup_container {
@@ -33,12 +44,6 @@
   flex-direction: column;
 }
 
-.forget_password {
-  color: var(--primary-color);
-  padding-left: 5rem;
-  text-decoration: underline;
-}
-
 .checkbox_section {
   gap: 0.5rem;
 }
@@ -55,12 +60,14 @@
 }
 
 .btn_style {
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
-.eye_slash{
+
+.eye_slash {
   margin: 0.5rem;
   cursor: pointer;
 }
+
 .showpassword_container {
   display: flex;
   justify-content: space-between;
