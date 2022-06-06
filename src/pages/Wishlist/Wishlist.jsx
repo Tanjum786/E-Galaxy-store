@@ -1,10 +1,10 @@
 import React from "react";
 import { wishlistimg } from "../../assets/images";
-import { Footer, Navbar } from "../../components";
+import {  Navbar } from "../../components";
 import { Link } from "react-router-dom";
-import { useProducts } from "../../hooks/context/cart-wishlist-context";
 import { Wishlistcard } from "./component/Wishlistcard";
 import "./wishlist.css";
+import { useProducts } from "../../Context";
 
 export const Wishlist = () => {
   const { productState } = useProducts();

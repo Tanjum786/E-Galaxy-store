@@ -51,11 +51,13 @@
 .img_size {
     height: 15rem;
 }
-.list_container{
+
+.list_container {
     margin-top: 1rem;
     box-shadow: 2px 2px 2px 2px var(--boder-color);
     width: 15rem;
 }
+
 .product_card {
     width: 17rem;
     margin-top: 2rem;
@@ -159,11 +161,29 @@
     color: var(--secondary-color);
     margin: 1rem;
 }
-.wishlist_btn{
+
+.wishlist_btn {
     border: none;
     font-size: 1rem;
     background: none;
 }
-.color-btn{
+
+.color-btn {
     color: var(--danger-alert-color);
+}
+
+.fillter_container {
+    position: sticky;
+    top: 5rem;
+    margin-left: 1rem;
+}
+
+.filter-section {
+    position: sticky;
+    top: 0;
+}
+
+.filter-sticky {
+    overflow-y: scroll;
+    height: 25rem;
 }

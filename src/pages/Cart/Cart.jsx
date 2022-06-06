@@ -2,17 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./cart.css";
 import { Navbar } from "../../components";
-import { Cardcart } from "./component/Cardcart";
-import { Cartbill } from "./component/Cartbill";
-import { useProducts } from "../../hooks/context/cart-wishlist-context";
 import { Emptycartimg } from "../../assets/images";
+import { useProducts } from "../../Context";
+import { Cardcart, Cartbill } from "./component";
 
 export const Cart = () => {
   const { productState } = useProducts();
   const { cart } = productState;
   return (
     <div>
-      <Navbar auth={"Login"} linkto={"/login"} />
+      <Navbar/>
       {cart.length <= 0 ? (
         <div className="cart_div">
           <img className="empty_cart" src={Emptycartimg} alt="empty-cart" />

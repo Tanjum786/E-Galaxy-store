@@ -1,5 +1,5 @@
-import { Toast } from "../../../components/Toast/Toast";
-import { useProducts } from "../../../hooks/context/cart-wishlist-context";
+import { Toast } from "../../../components";
+import { useProducts } from "../../../Context";
 
 const Wishlistcard = () => {
   const { productState, productDispatch } = useProducts();
@@ -13,11 +13,11 @@ const Wishlistcard = () => {
               <div className="wishlist_icon dis_flex">
                 <button
                   className="wish-btn"
-                  onClick={() =>{
+                  onClick={() => {
                     Toast(
-                            `Successfuly Removed ${title} from wishlist`,
-                            "success"
-                          );
+                      `Successfuly Removed ${title} from wishlist`,
+                      "success"
+                    );
                     productDispatch({
                       type: "REMOVE_FROM_WISHLIST",
                       payload: {
@@ -28,8 +28,8 @@ const Wishlistcard = () => {
                         rating: rating,
                         Quantity: Quantity,
                       },
-                    })}
-                  }
+                    });
+                  }}
                 >
                   <i className="fas fa-heart"></i>
                 </button>
@@ -45,11 +45,8 @@ const Wishlistcard = () => {
             <div className="btn_container dis_flex">
               <button
                 className="e_secondary_btn padding_small"
-                onClick={() =>{
-                  Toast(
-                            `Successfuly Moved ${title} to cart`,
-                            "success"
-                          );
+                onClick={() => {
+                  Toast(`Successfuly Moved ${title} to cart`, "success");
                   productDispatch({
                     type: "MOVE_TO_CART",
                     payload: {
@@ -59,7 +56,7 @@ const Wishlistcard = () => {
                       Quantity: Quantity,
                       _id: _id,
                     },
-                  })
+                  });
                 }}
               >
                 Move to Cart<i className="fa fa-shopping-cart cart_btn"></i>

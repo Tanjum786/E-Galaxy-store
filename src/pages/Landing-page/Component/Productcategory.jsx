@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { useFilter } from "../../../hooks/context/filter-context";
+import { useFilter } from "../../../Context";
 
 
 const Productcategory = ({ productImage, categoryName }) => {
