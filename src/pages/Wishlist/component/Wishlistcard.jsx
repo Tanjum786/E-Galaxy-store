@@ -1,17 +1,17 @@
 import { addTocart, removeFromWishlist, updateCart } from "../../../Apicalls";
 import { Toast } from "../../../components";
-import { useAuth, useProducts } from "../../../Context";
+import { useProducts } from "../../../Context";
 
 const Wishlistcard = () => {
   const { productState, productDispatch } = useProducts();
   const { wishList, cart } = productState;
-  const { userDetailes } = useAuth();
-  const { token } = userDetailes;
+  const token = localStorage.getItem("token");
 
   const moveTocartHandler = (product) => {
     const items = cart?.find((item) => item._id === product._id);
     if (items) {
       updateCart(product._id, "increment", token, productDispatch);
+      removeFromWishlist(product._id, token, productDispatch);
       Toast(
         `${product.title} already exists in cart, increased it's quantity`,
         "warn"
@@ -19,14 +19,14 @@ const Wishlistcard = () => {
     } else {
       addTocart(product, token, productDispatch);
       removeFromWishlist(product._id, token, productDispatch);
-      Toast(`Successfuly aded ${product.title} to cart`, "success");
+      Toast(`Successfuly added ${product.title} to cart`, "success");
     }
   };
   return (
     <>
       {wishList?.map(({ img, title, price, Quantity, _id }) => {
         return (
-          <div className="wishlist_card">
+          <div className="wishlist_card" key={_id}>
             <div className="wishlist_img">
               <div className="wishlist_icon dis_flex">
                 <button

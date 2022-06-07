@@ -10,7 +10,7 @@ const removeFromWishlist = async (_id, token, productDispatch) => {
 
     productDispatch({
       type: "REMOVE_FROM_WISHLIST",
-      payload: response.data.wishList,
+      payload: response.data.wishlist,
     });
   } catch (error) {
     console.error(error);

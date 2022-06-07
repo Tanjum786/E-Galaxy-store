@@ -56,7 +56,7 @@ export const Signup = () => {
             <div className="login_signup_container signup_container gap_s dis_flex">
               <h1 className="login_signup_name">Sign Up</h1>
               <label htmlFor="firstname">
-                First Name<small class="star_color font_small">*</small>
+                First Name<small className="star_color font_small">*</small>
               </label>
               <input
                 type="text"

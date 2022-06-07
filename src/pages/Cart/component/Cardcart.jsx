@@ -14,7 +14,7 @@ const Cardcart = () => {
 
 
   const movetoWishlistHandler = (product) => {
-    const wishlistItem = wishList.find((item) => item._id === product._id);
+    const wishlistItem = wishList?.find((item) => item._id === product._id);
     if (!wishlistItem) {
       addToWishlist(product, token, productDispatch);
       Toast(`Moved product ${product.title}to wishlist`, "success");

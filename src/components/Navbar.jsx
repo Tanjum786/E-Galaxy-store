@@ -71,9 +71,11 @@ export const Navbar = () => {
                 <Link to="/wishlist">
                   <i className="icon_nav fa fa-heart-o"></i>
                 </Link>
-                <p className="badge_wishlist font_small dis_flex padding_small">
-                {wishList?.length >= 1 ? wishList.length : 0}
-                </p>
+                {users && token ? (
+                  <p className="badge_wishlist font_small dis_flex padding_small">
+                    {wishList?.length >= 1 ? wishList.length : 0}
+                  </p>
+                ) : null}
               </div>
             </li>
             <li className="list-item-inline">
@@ -81,9 +83,11 @@ export const Navbar = () => {
                 <Link to="/cart">
                   <i className="icon_nav fas fa-shopping-cart"></i>
                 </Link>
-                <p className="badge_cart font_small dis_flex padding_small">
-                  {cart.length}
-                </p>
+                {users && token ? (
+                  <p className="badge_cart font_small dis_flex padding_small">
+                    {cart.length}
+                  </p>
+                ) : null}
               </div>
             </li>
             <li className="list-item-inline">
