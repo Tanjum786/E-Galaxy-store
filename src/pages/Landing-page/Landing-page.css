@@ -76,6 +76,7 @@ h5,
 
 .icon_nav {
   color: var(--primary-color);
+  margin-left:1rem;
 }
 
 .icon-container-nav {
@@ -185,7 +186,7 @@ h5,
 .badge_wishlist {
   position: absolute;
   bottom: 1.7rem;
-  right: 4rem;
+  right: 3.5rem;
   justify-content: center;
   align-items: center;
   height: 1.2rem;
@@ -206,7 +207,7 @@ h5,
 }
 
 .badge_wishlist {
-  right: 8rem;
+  right: 7.5rem;
 }
 
 .wish-cart-icon {

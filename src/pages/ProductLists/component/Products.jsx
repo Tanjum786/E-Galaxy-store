@@ -11,13 +11,13 @@ import {
   addToWishlist,
   removeFromWishlist,
 } from "../../../Apicalls";
+import { searchfilter } from "../../../utils/searchfilter";
 
-export const Products = () => {
+export const Products = ({searchQurey}) => {
   const { filterState } = useFilter();
   const { productState, productDispatch } = useProducts();
   const { wishList } = productState;
   const [res, setRes] = useState([]);
-  const [loading, setloding] = useState("");
   const navigate = useNavigate();
 
   const token = localStorage.getItem("token");
@@ -26,7 +26,6 @@ export const Products = () => {
   const { cart } = productState;
 
   const dataFetch = async () => {
-    setloding("Loading.....");
     const response = await axios.get("/api/products");
     setRes(response.data.products);
     setloding("");
@@ -48,9 +47,8 @@ export const Products = () => {
 
   const addtoCartHandler = (product) => {
     if (token && user) {
-      addTocart( product,token , productDispatch);
+      addTocart(product, token, productDispatch);
       Toast(`successfully added ${product.title} to the cart`, "success");
-
     } else {
       navigate("/login");
       Toast("Your are not logedin", "warning");
@@ -65,11 +63,12 @@ export const Products = () => {
   const RatingProduct = RatingFun(SortProduct, filterState);
   const RangeProduct = RangeFun(RatingProduct, filterState);
   const CategoryProduct = Categoryfun(RangeProduct, filterState);
+  const searchFilterProduct = searchfilter(CategoryProduct, searchQurey);
   return (
     <>
       <div className="product_card_list">
-        <h1 className="products_titel">
-          Showing All Products ({CategoryProduct.length})
+        <h1 className="products_title">
+          Showing All Products ({searchFilterProduct.length})
         </h1>
         <div className="title_underline"> </div>
         {filterState.PriceValue <= 50 ? (
@@ -79,9 +78,9 @@ export const Products = () => {
         ) : (
           ""
         )}
-        <h1>{loading}</h1>
-        <div className="all_cards_container dis_flex">
-          {CategoryProduct.map(
+          <div className="all_cards_container dis_flex">
+          {searchFilterProduct.length!==0?
+            searchFilterProduct.map(
             ({ img, rating, title, price, _id, Quantity }) => {
               const isaddedTocart = cart.some((item) => item._id === _id);
 
@@ -151,7 +150,7 @@ export const Products = () => {
                 </div>
               );
             }
-          )}
+          ):<h1 className="waring-massage">No such products Exists</h1>}
         </div>
       </div>
     </>

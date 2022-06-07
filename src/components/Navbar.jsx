@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth, useProducts } from "../Context";
 import { Toast } from "./Toast";
 
-export const Navbar = () => {
+export const Navbar = ({searchQurey, setSerachQurey}) => {
   const { productState } = useProducts();
   const { cart, wishList } = productState;
   const {
@@ -23,6 +23,11 @@ export const Navbar = () => {
     Authdispatch({ type: "LOGOUT" });
     Toast(`Successfuly logedout`, "success");
   };
+
+  const searchInputHandler=((e)=>{
+    setSerachQurey(e.target.value)
+    
+  })
   return (
     <div className="nav_container">
       <nav className="nav_bar">
@@ -42,6 +47,8 @@ export const Navbar = () => {
               type="text"
               placeholder=" Search Your Desire"
               name="search"
+              value={searchQurey}
+              onChange={searchInputHandler}
             />
           </div>
         )}
