@@ -92,7 +92,7 @@ export const Navbar = () => {
             </li>
             <li className="list-item-inline">
               <div className="user-container dis_flex">
-                <Link to="/add usre">
+                <Link to="/">
                   <div className="icon-container-nav">
                     <i className="icon_nav fas fa-user"></i>
                   </div>
