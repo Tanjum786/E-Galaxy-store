@@ -9,7 +9,6 @@ export const updateCart = async (_id,actionType,token,productDispatch) => {
       },
       { headers: { authorization: token } }
     );
-console.log(response)
     productDispatch({ type: "UPDATE_CART", payload: response.data.cart });
   } catch (error) {
       console.error(error)

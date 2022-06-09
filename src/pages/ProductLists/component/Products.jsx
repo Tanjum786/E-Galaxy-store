@@ -13,7 +13,7 @@ import {
 } from "../../../Apicalls";
 import { searchfilter } from "../../../utils/searchfilter";
 
-export const Products = ({searchQurey}) => {
+export const Products = ({ searchQurey }) => {
   const { filterState } = useFilter();
   const { productState, productDispatch } = useProducts();
   const { wishList } = productState;
@@ -28,7 +28,6 @@ export const Products = ({searchQurey}) => {
   const dataFetch = async () => {
     const response = await axios.get("/api/products");
     setRes(response.data.products);
-    setloding("");
   };
   useEffect(dataFetch, []);
 
@@ -78,79 +77,82 @@ export const Products = ({searchQurey}) => {
         ) : (
           ""
         )}
-          <div className="all_cards_container dis_flex">
-          {searchFilterProduct.length!==0?
+        <div className="all_cards_container dis_flex">
+          {searchFilterProduct.length !== 0 ? (
             searchFilterProduct.map(
-            ({ img, rating, title, price, _id, Quantity }) => {
-              const isaddedTocart = cart.some((item) => item._id === _id);
+              ({ img, rating, title, price, _id, Quantity }) => {
+                const isaddedTocart = cart.some((item) => item._id === _id);
 
-              return (
-                <div className="product_card bg_color" key={_id}>
-                  <div className="product_card_img">
-                    <div className="product_wishlist_icon dis_flex">
-                      {wishList?.some((item) => item._id === _id) ? (
-                        <AiFillHeart
-                          size="1.4rem"
-                          className="wishlist_btn color-btn"
-                          onClick={() => removeWishlistHandler(_id)}
-                        />
+                return (
+                  <div className="product_card bg_color" key={_id}>
+                    <div className="product_card_img">
+                      <div className="product_wishlist_icon dis_flex">
+                        {wishList?.some((item) => item._id === _id) ? (
+                          <AiFillHeart
+                            size="1.4rem"
+                            className="wishlist_btn color-btn"
+                            onClick={() => removeWishlistHandler(_id)}
+                          />
+                        ) : (
+                          <AiOutlineHeart
+                            size="1.4rem"
+                            className="wishlist_btn color-btn"
+                            onClick={() =>
+                              addToWishlistHandler({
+                                img,
+                                rating,
+                                title,
+                                price,
+                                _id,
+                                Quantity,
+                              })
+                            }
+                          />
+                        )}
+                      </div>
+                      <img src={img} alt="product-image" className="img_size" />
+                    </div>
+                    <div className="rating_container">
+                      <span className="rating">
+                        <i className="fas fa-star icon_star"></i> {rating}
+                      </span>
+                    </div>
+                    <div className="product_card_details gap_s dis_flex">
+                      <span>{title}</span>
+                      <h3>₹ {price}</h3>
+                    </div>
+                    <div>
+                      {isaddedTocart ? (
+                        <Link to="/cart">
+                          <button className="add_to_cart bg_color padding_small">
+                            Go To Cart
+                          </button>
+                        </Link>
                       ) : (
-                        <AiOutlineHeart
-                          size="1.4rem"
-                          className="wishlist_btn color-btn"
+                        <button
                           onClick={() =>
-                            addToWishlistHandler({
+                            addtoCartHandler({
                               img,
-                              rating,
+                              _id,
                               title,
                               price,
-                              _id,
                               Quantity,
+                              rating,
                             })
                           }
-                        />
+                          className="add_to_cart bg_color padding_small"
+                        >
+                          Add To Cart
+                        </button>
                       )}
                     </div>
-                    <img src={img} alt="product-image" className="img_size" />
                   </div>
-                  <div className="rating_container">
-                    <span className="rating">
-                      <i className="fas fa-star icon_star"></i> {rating}
-                    </span>
-                  </div>
-                  <div className="product_card_details gap_s dis_flex">
-                    <span>{title}</span>
-                    <h3>₹ {price}</h3>
-                  </div>
-                  <div>
-                    {isaddedTocart ? (
-                      <Link to="/cart">
-                        <button className="add_to_cart bg_color padding_small">
-                          Go To Cart
-                        </button>
-                      </Link>
-                    ) : (
-                      <button
-                        onClick={() =>
-                          addtoCartHandler({
-                            img,
-                            _id,
-                            title,
-                            price,
-                            Quantity,
-                            rating,
-                          })
-                        }
-                        className="add_to_cart bg_color padding_small"
-                      >
-                        Add To Cart
-                      </button>
-                    )}
-                  </div>
-                </div>
-              );
-            }
-          ):<h1 className="waring-massage">No such products Exists</h1>}
+                );
+              }
+            )
+          ) : (
+            <h1 className="waring-massage">No such products Exists</h1>
+          )}
         </div>
       </div>
     </>
