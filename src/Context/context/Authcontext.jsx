@@ -24,9 +24,9 @@ const AuthProvider = ({ children }) => {
 
   const SignUp = async (
     email,
-    firstName,
-    lastName,
     password,
+    lastName,
+    firstName,
     confirPassword,
     checkUserDetailes,
     checkPassword
@@ -36,9 +36,9 @@ const AuthProvider = ({ children }) => {
         try {
           const response = await axios.post("/api/auth/signup", {
             email,
+            password,
             lastName,
             firstName,
-            password,
             confirPassword,
           });
           navigate(-2);
