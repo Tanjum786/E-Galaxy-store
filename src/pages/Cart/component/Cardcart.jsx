@@ -42,7 +42,7 @@ const Cardcart = () => {
                 <span className="qunt">Quantity:</span>
                 <button
                   className="qunt_btn bg_color font_small"
-                  disabled={Quantity > 1 && Quantity !== 0 ? false : true}
+                  disabled={Quantity > 1 && Quantity > 0 ? false : true}
                   onClick={() => {
                     {
                       Quantity > 1

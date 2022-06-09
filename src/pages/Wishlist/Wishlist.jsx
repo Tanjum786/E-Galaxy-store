@@ -28,7 +28,7 @@ export const Wishlist = () => {
         ) : (
           <>
             <div>
-              <h1 className="products_titel">
+              <h1 className="products_title">
                 My wishlist : ({wishList?.length})
               </h1>
               <div className="title_underline"></div>

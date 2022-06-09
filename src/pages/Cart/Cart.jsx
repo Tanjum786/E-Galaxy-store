@@ -27,7 +27,7 @@ export const Cart = () => {
       ) : (
         <>
           <div>
-            <h1 className="products_titel">My Cart : ({cart.length})</h1>
+            <h1 className="products_title">My Cart : ({cart.length})</h1>
             <div className="title_underline"></div>
           </div>
           <section className="cart_container dis_flex">
