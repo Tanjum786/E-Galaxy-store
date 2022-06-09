@@ -1,4 +1,4 @@
-# [E-Galaxy-store](https://e-galaxy-store-shop.vercel.app/)
+# [E-Galaxy-store](https://e-galaxy-store.vercel.app/)
 E-Galaxy-store is E-commerce website of clothes. where user can shop clothes.
 
 ## Technologies used 
@@ -41,7 +41,7 @@ E-Galaxy-store is E-commerce website of clothes. where user can shop clothes.
  - Install npm with `npm install` in your Terminal
  - Run `npm start`
 ## Project Link
-[E-Galaxy-store](https://e-galaxy-store-shop.vercel.app/)
+[E-Galaxy-store](https://e-galaxy-store.vercel.app/)
 
 ## Preview
 
