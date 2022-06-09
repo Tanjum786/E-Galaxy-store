@@ -6,7 +6,7 @@ import {
   LandingPage,
   Login,
   Productlisting,
-  Singup,
+  Signup,
   Wishlist,
 } from "./pages";
 import { Footer } from "./components";
@@ -20,7 +20,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<LandingPage />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Singup />} />
+        <Route path="/signup" element={<Signup/>} />
         <Route
           path="/wishlist"
           element={

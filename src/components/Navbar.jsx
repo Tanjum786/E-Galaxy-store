@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth, useProducts } from "../Context";
 import { Toast } from "./Toast";
 
-export const Navbar = () => {
+export const Navbar = ({searchQurey, setSerachQurey}) => {
   const { productState } = useProducts();
   const { cart, wishList } = productState;
   const {
@@ -23,6 +23,11 @@ export const Navbar = () => {
     Authdispatch({ type: "LOGOUT" });
     Toast(`Successfuly logedout`, "success");
   };
+
+  const searchInputHandler=((e)=>{
+    setSerachQurey(e.target.value)
+    
+  })
   return (
     <div className="nav_container">
       <nav className="nav_bar">
@@ -42,6 +47,8 @@ export const Navbar = () => {
               type="text"
               placeholder=" Search Your Desire"
               name="search"
+              value={searchQurey}
+              onChange={searchInputHandler}
             />
           </div>
         )}
@@ -71,9 +78,11 @@ export const Navbar = () => {
                 <Link to="/wishlist">
                   <i className="icon_nav fa fa-heart-o"></i>
                 </Link>
-                <p className="badge_wishlist font_small dis_flex padding_small">
-                  {wishList.length}
-                </p>
+                {users && token ? (
+                  <p className="badge_wishlist font_small dis_flex padding_small">
+                    {wishList?.length >= 1 ? wishList.length : 0}
+                  </p>
+                ) : null}
               </div>
             </li>
             <li className="list-item-inline">
@@ -81,14 +90,16 @@ export const Navbar = () => {
                 <Link to="/cart">
                   <i className="icon_nav fas fa-shopping-cart"></i>
                 </Link>
-                <p className="badge_cart font_small dis_flex padding_small">
-                  {cart.length}
-                </p>
+                {users && token ? (
+                  <p className="badge_cart font_small dis_flex padding_small">
+                    {cart.length}
+                  </p>
+                ) : null}
               </div>
             </li>
             <li className="list-item-inline">
               <div className="user-container dis_flex">
-                <Link to="/add usre">
+                <Link to="/">
                   <div className="icon-container-nav">
                     <i className="icon_nav fas fa-user"></i>
                   </div>

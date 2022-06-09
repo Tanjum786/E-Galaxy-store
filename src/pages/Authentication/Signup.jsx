@@ -5,7 +5,7 @@ import { Navbar, Toast } from "../../components";
 import { useAuth, useloginsignup } from "../../Context";
 import "./Authentication.css";
 
-export const Singup = () => {
+export const Signup = () => {
   const { showPassword, showPasswordFun } = useloginsignup();
   const { SignUp, authState, Authdispatch } = useAuth();
   const { email, firstName, lastName, password, confirPassword, isSubmit } =
@@ -56,7 +56,7 @@ export const Singup = () => {
             <div className="login_signup_container signup_container gap_s dis_flex">
               <h1 className="login_signup_name">Sign Up</h1>
               <label htmlFor="firstname">
-                First Name<small class="star_color font_small">*</small>
+                First Name<small className="star_color font_small">*</small>
               </label>
               <input
                 type="text"
@@ -109,7 +109,7 @@ export const Singup = () => {
                   })
                 }
               />
-              <label htmlFor="password_singup">
+              <label htmlFor="password_signup">
                 Password<small className="star_color font_small">*</small>
               </label>
               <input
