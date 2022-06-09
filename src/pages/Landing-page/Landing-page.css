@@ -172,14 +172,12 @@ h5,
 
 .list-item-inline {
   list-style: none;
-  border-radius: 50%;
   height: 3rem;
-  text-align: center;
   width: 3rem;
 }
 
 .list-item-inline:hover {
-  background-color: var(--boder-color);
+  background-color:transparent;
 }
 
 .badge_cart,
