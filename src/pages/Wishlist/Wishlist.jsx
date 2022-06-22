@@ -28,17 +28,7 @@ export const Wishlist = () => {
         ) : (
           <>
             <div>
-<<<<<<< HEAD
               <h1 className="products_title">
-=======
-              <h1 className="products_titel">
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 97a14ddb01619df75d058e5122550631087a869b
-=======
->>>>>>> 97a14ddb01619df75d058e5122550631087a869b
-=======
->>>>>>> 97a14ddb01619df75d058e5122550631087a869b
                 My wishlist : ({wishList?.length})
               </h1>
               <div className="title_underline"></div>

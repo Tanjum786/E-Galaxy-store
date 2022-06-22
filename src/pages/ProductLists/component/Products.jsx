@@ -13,19 +13,7 @@ import {
 } from "../../../Apicalls";
 import { searchfilter } from "../../../utils/searchfilter";
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 export const Products = ({ searchQurey }) => {
-=======
-export const Products = ({searchQurey}) => {
->>>>>>> 97a14ddb01619df75d058e5122550631087a869b
-=======
-export const Products = ({searchQurey}) => {
->>>>>>> 97a14ddb01619df75d058e5122550631087a869b
-=======
-export const Products = ({searchQurey}) => {
->>>>>>> 97a14ddb01619df75d058e5122550631087a869b
   const { filterState } = useFilter();
   const { productState, productDispatch } = useProducts();
   const { wishList } = productState;
@@ -89,9 +77,6 @@ export const Products = ({searchQurey}) => {
         ) : (
           ""
         )}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
         <div className="all_cards_container dis_flex">
           {searchFilterProduct.length !== 0 ? (
             searchFilterProduct.map(
@@ -126,50 +111,6 @@ export const Products = ({searchQurey}) => {
                         )}
                       </div>
                       <img src={img} alt="product-image" className="img_size" />
-=======
-=======
->>>>>>> 97a14ddb01619df75d058e5122550631087a869b
-=======
->>>>>>> 97a14ddb01619df75d058e5122550631087a869b
-          <div className="all_cards_container dis_flex">
-          {searchFilterProduct.length!==0?
-            searchFilterProduct.map(
-            ({ img, rating, title, price, _id, Quantity }) => {
-              const isaddedTocart = cart.some((item) => item._id === _id);
-
-              return (
-                <div className="product_card bg_color" key={_id}>
-                  <div className="product_card_img">
-                    <div className="product_wishlist_icon dis_flex">
-                      {wishList?.some((item) => item._id === _id) ? (
-                        <AiFillHeart
-                          size="1.4rem"
-                          className="wishlist_btn color-btn"
-                          onClick={() => removeWishlistHandler(_id)}
-                        />
-                      ) : (
-                        <AiOutlineHeart
-                          size="1.4rem"
-                          className="wishlist_btn color-btn"
-                          onClick={() =>
-                            addToWishlistHandler({
-                              img,
-                              rating,
-                              title,
-                              price,
-                              _id,
-                              Quantity,
-                            })
-                          }
-                        />
-                      )}
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 97a14ddb01619df75d058e5122550631087a869b
-=======
->>>>>>> 97a14ddb01619df75d058e5122550631087a869b
-=======
->>>>>>> 97a14ddb01619df75d058e5122550631087a869b
                     </div>
                     <div className="rating_container">
                       <span className="rating">
@@ -203,7 +144,6 @@ export const Products = ({searchQurey}) => {
                         >
                           Add To Cart
                         </button>
-<<<<<<< HEAD
                       )}
                     </div>
                   </div>
@@ -213,37 +153,6 @@ export const Products = ({searchQurey}) => {
           ) : (
             <h1 className="waring-massage">No such products Exists</h1>
           )}
-=======
-                      </Link>
-                    ) : (
-                      <button
-                        onClick={() =>
-                          addtoCartHandler({
-                            img,
-                            _id,
-                            title,
-                            price,
-                            Quantity,
-                            rating,
-                          })
-                        }
-                        className="add_to_cart bg_color padding_small"
-                      >
-                        Add To Cart
-                      </button>
-                    )}
-                  </div>
-                </div>
-              );
-            }
-          ):<h1 className="waring-massage">No such products Exists</h1>}
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 97a14ddb01619df75d058e5122550631087a869b
-=======
->>>>>>> 97a14ddb01619df75d058e5122550631087a869b
-=======
->>>>>>> 97a14ddb01619df75d058e5122550631087a869b
         </div>
       </div>
     </>

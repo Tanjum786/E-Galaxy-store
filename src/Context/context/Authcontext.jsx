@@ -73,19 +73,7 @@ const AuthProvider = ({ children }) => {
             "users",
             JSON.stringify(response.data.foundUser)
           );
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
           navigate(location?.state?.from?.pathname || -1 , { replace: true });
-=======
-          navigate(location?.state?.from?.pathname || "/", { replace: true });
->>>>>>> 97a14ddb01619df75d058e5122550631087a869b
-=======
-          navigate(location?.state?.from?.pathname || "/", { replace: true });
->>>>>>> 97a14ddb01619df75d058e5122550631087a869b
-=======
-          navigate(location?.state?.from?.pathname || "/", { replace: true });
->>>>>>> 97a14ddb01619df75d058e5122550631087a869b
           Toast(`successfully logedin`, "success");
           setUserDetailes({
             ...userDetailes,
