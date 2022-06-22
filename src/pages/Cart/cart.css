@@ -86,14 +86,6 @@
 .price {
   font-size: 2rem;
 }
-
-.qunt_btn {
-  width: 1.5rem;
-  border-radius: 50%;
-  height: 1.5rem;
-  border: 1px solid var(--gray-color);
-}
-
 .input_num {
   width: 3rem;
   padding: 0;

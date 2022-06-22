@@ -1,6 +1,7 @@
 .product_card_list {
   background-color: var(--background-color);
   margin: 1rem;
+  width: 100%;
 }
 
 .price_info,
