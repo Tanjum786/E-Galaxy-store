@@ -1,7 +1,7 @@
-import { useProducts } from "../../../hooks/context/cart-wishlist-context";
+import { useProducts } from "../../../Context";
 
 const Cartbill = () => {
-  const { productState } = useProducts();
+  const { productState } =useProducts ();
   const { cart } = productState;
 
   const Price = cart.reduce(

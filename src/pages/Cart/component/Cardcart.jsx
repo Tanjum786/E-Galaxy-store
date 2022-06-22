@@ -1,13 +1,31 @@
-import { Toast } from "../../../components/Toast/Toast";
-import { useProducts } from "../../../hooks/context/cart-wishlist-context";
+import {
+  addToWishlist,
+  removefromCart,
+  removeFromWishlist,
+  updateCart,
+} from "../../../Apicalls";
+import { Toast } from "../../../components/Toast";
+import { useProducts } from "../../../Context";
 
 const Cardcart = () => {
   const { productState, productDispatch } = useProducts();
-  const { cart } = productState;
+  const { cart, wishList } = productState;
+  const token = localStorage.getItem("token");
 
+
+  const movetoWishlistHandler = (product) => {
+    const wishlistItem = wishList?.find((item) => item._id === product._id);
+    if (!wishlistItem) {
+      addToWishlist(product, token, productDispatch);
+      Toast(`Moved product ${product.title}to wishlist`, "success");
+    }
+    removefromCart(product._id, token, productDispatch);
+  };
+
+  
   return (
     <>
-      {cart.map(({ img, title, price, Quantity, _id }) => {
+      {cart?.map(({ img, title, price, Quantity, _id }) => {
         return (
           <div className="cart_card_container bg_color dis_flex" key={_id}>
             <div className="img_container">
@@ -24,6 +42,19 @@ const Cardcart = () => {
                 <span className="qunt">Quantity:</span>
                 <button
                   className="qunt_btn bg_color font_small"
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+                  disabled={Quantity > 1 && Quantity > 0 ? false : true}
+=======
+                  disabled={Quantity > 1 && Quantity !== 0 ? false : true}
+>>>>>>> 97a14ddb01619df75d058e5122550631087a869b
+=======
+                  disabled={Quantity > 1 && Quantity !== 0 ? false : true}
+>>>>>>> 97a14ddb01619df75d058e5122550631087a869b
+=======
+                  disabled={Quantity > 1 && Quantity !== 0 ? false : true}
+>>>>>>> 97a14ddb01619df75d058e5122550631087a869b
                   onClick={() => {
                     {
                       Quantity > 1
@@ -35,13 +66,8 @@ const Cardcart = () => {
                           )
                         : "";
                     }
-                    productDispatch({
-                      type: "DECREASE",
-                      payload: {
-                        _id: _id,
-                        Quantity: Quantity,
-                      },
-                    });
+
+                    updateCart(_id, "decrement", token, productDispatch);
                   }}
                 >
                   -
@@ -49,7 +75,9 @@ const Cardcart = () => {
                 <p className="input_num font_small">{Quantity}</p>
                 <button
                   className="qunt_btn bg_color font_small"
+                  disabled={Quantity < 5 && Quantity != 6 ? false : true}
                   onClick={() => {
+                    updateCart(_id, "increment", token, productDispatch);
                     {
                       Quantity >= 5
                         ? Toast(
@@ -63,13 +91,6 @@ const Cardcart = () => {
                             "success"
                           );
                     }
-                    productDispatch({
-                      type: "INCREASE",
-                      payload: {
-                        _id: _id,
-                        Quantity: Quantity,
-                      },
-                    });
                   }}
                 >
                   +
@@ -80,12 +101,7 @@ const Cardcart = () => {
                   className="cart_remove_btn btn_cart font_small"
                   onClick={() => {
                     Toast(`Successfuly Removed ${title} from cart`, "success");
-                    productDispatch({
-                      type: "REMOVE_FROM_CART",
-                      payload: {
-                        _id: _id,
-                      },
-                    });
+                    removefromCart(_id, token, productDispatch);
                   }}
                 >
                   Remove From cart
@@ -93,17 +109,9 @@ const Cardcart = () => {
                 <button
                   className="cart_wishlist_btn bg_color btn_cart font_small"
                   onClick={() => {
-                    Toast(`Successfuly Moved ${title} to wishlist`, "success");
-                    productDispatch({
-                      type: "MOVE_TO_WISHLIST",
-                      payload: {
-                        img: img,
-                        title: title,
-                        price: price,
-                        _id: _id,
-                        Quantity: Quantity,
-                      },
-                    });
+                    movetoWishlistHandler({ img, price, _id, title, Quantity });
+                    // Toast(`Successfuly Moved ${title} to wishlist`, "success");
+                    // addToWishlist()
                   }}
                 >
                   Move to wishlist

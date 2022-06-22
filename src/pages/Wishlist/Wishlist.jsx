@@ -1,10 +1,10 @@
 import React from "react";
 import { wishlistimg } from "../../assets/images";
-import { Footer, Navbar } from "../../components";
+import {  Navbar } from "../../components";
 import { Link } from "react-router-dom";
-import { useProducts } from "../../hooks/context/cart-wishlist-context";
 import { Wishlistcard } from "./component/Wishlistcard";
 import "./wishlist.css";
+import { useProducts } from "../../Context";
 
 export const Wishlist = () => {
   const { productState } = useProducts();
@@ -12,7 +12,7 @@ export const Wishlist = () => {
   return (
     <>
       <div>
-        <Navbar auth={"Login"} linkto={"/login"} />
+        <Navbar/>
         {wishList.length <= 0 ? (
           <div className="cart_div">
             <img className="empty_cart" src={wishlistimg} alt="empty-cart" />
@@ -28,8 +28,18 @@ export const Wishlist = () => {
         ) : (
           <>
             <div>
+<<<<<<< HEAD
+              <h1 className="products_title">
+=======
               <h1 className="products_titel">
-                My wishlist : ({wishList.length})
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 97a14ddb01619df75d058e5122550631087a869b
+=======
+>>>>>>> 97a14ddb01619df75d058e5122550631087a869b
+=======
+>>>>>>> 97a14ddb01619df75d058e5122550631087a869b
+                My wishlist : ({wishList?.length})
               </h1>
               <div className="title_underline"></div>
             </div>

@@ -3,31 +3,44 @@ import "./App.css";
 import MockmanEs from "mockman-js";
 import {
   Cart,
-  Forgotpassword,
   LandingPage,
   Login,
   Productlisting,
-  Singup,
+  Signup,
   Wishlist,
 } from "./pages";
 import { Footer } from "./components";
 import { ToastContainer } from "react-toastify";
+import { RequireAuth } from "./RequireAuth";
 
 function App() {
   return (
     <div className="App">
-    <ToastContainer/>
+      <ToastContainer />
       <Routes>
         <Route exact path="/" element={<LandingPage />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Singup />} />
-        <Route path="/wishlist" element={<Wishlist />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/signup" element={<Signup/>} />
+        <Route
+          path="/wishlist"
+          element={
+            <RequireAuth>
+              <Wishlist />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/cart"
+          element={
+            <RequireAuth>
+              <Cart />
+            </RequireAuth>
+          }
+        />
         <Route path="/product" element={<Productlisting />} />
-        <Route path="/Forgotpassword" element={<Forgotpassword />} />
-        <Route path="/mock" element={<MockmanEs/>}/>
+        <Route path="/mock" element={<MockmanEs />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

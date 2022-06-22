@@ -1,2 +1,3 @@
-export {Footer} from './Footer-comp/Footer';
-export {Navbar} from './Navbar-comp/Navbar'
+export { Footer, } from "./Footer";
+export { Navbar } from "./Navbar";
+export { Toast } from "./Toast";

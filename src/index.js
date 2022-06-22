@@ -4,9 +4,12 @@ import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
 import { BrowserRouter } from "react-router-dom";
-import { LoginSignupProvider } from "./hooks/context/loginSignup-context";
-import { FilterContextProvider } from "./hooks/context/filter-context";
-import { CartProvider } from "./hooks/context/cart-wishlist-context";
+import {
+  AuthProvider,
+  CartProvider,
+  FilterContextProvider,
+  LoginSignupProvider,
+} from "./Context";
 
 // Call make Server
 makeServer();
@@ -16,9 +19,11 @@ ReactDOM.render(
     <BrowserRouter>
       <FilterContextProvider>
         <CartProvider>
-          <LoginSignupProvider>
-            <App />
-          </LoginSignupProvider>
+          <AuthProvider>
+            <LoginSignupProvider>
+              <App />
+            </LoginSignupProvider>
+          </AuthProvider>
         </CartProvider>
       </FilterContextProvider>
     </BrowserRouter>

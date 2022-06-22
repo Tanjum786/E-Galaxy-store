@@ -1,25 +1,32 @@
 import React from "react";
-import { useFilter } from "../../../hooks/context/filter-context";
+import { useFilter } from "../../../Context";
 
 export const Filters = () => {
   const { filterState, filterDispatch } = useFilter();
-  const { CategoryKids, CategoryMen, CategoryWomen, PriceValue,Rating,sortby} = filterState;
+  const {
+    CategoryKids,
+    CategoryMen,
+    CategoryWomen,
+    PriceValue,
+    Rating,
+    sortby,
+  } = filterState;
   return (
     <>
       <div className="fillter_container bg_color font_small dis_flex">
-        
-          <ul className="product_lists">
-            <li>
-              <div className="product_title dis_flex">
-                <h1 className="products_titel">Filters</h1>
-                <button
-                  className="clear_btn font_small"
-                  onClick={() => filterDispatch({ type: "RESET", payload: "" })}
-                >
-                  Clear All
-                </button>
-              </div>
-            </li>
+        <ul className="product_lists filter-section">
+          <li>
+            <div className="product_title dis_flex">
+              <h1 className="products_titel">Filters</h1>
+              <button
+                className="clear_btn font_small"
+                onClick={() => filterDispatch({ type: "RESET", payload: "" })}
+              >
+                Clear All
+              </button>
+            </div>
+          </li>
+          <div className="filter-sticky">
             <li className="list_container">
               <div className="price_range dis_flex">
                 <h2>Price</h2>
@@ -55,7 +62,8 @@ export const Filters = () => {
                           payload: e.target.checked,
                         })
                       }
-                    /> Men's cloth
+                    />{" "}
+                    Men's cloth
                   </label>
                 </div>
                 <div>
@@ -71,7 +79,8 @@ export const Filters = () => {
                           payload: e.target.checked,
                         })
                       }
-                    /> Kid's cloth
+                    />{" "}
+                    Kid's cloth
                   </label>
                 </div>
                 <div>
@@ -87,7 +96,8 @@ export const Filters = () => {
                           payload: e.target.checked,
                         })
                       }
-                    /> Women's cloth
+                    />{" "}
+                    Women's cloth
                   </label>
                 </div>
               </div>
@@ -101,9 +111,10 @@ export const Filters = () => {
                       type="radio"
                       id="4stars"
                       name="radio_rating"
-                      checked={Rating==="Four"}
+                      checked={Rating === "Four"}
                       onChange={() => filterDispatch({ type: "Four" })}
-                    /> 4 stars & above
+                    />{" "}
+                    4 stars & above
                   </label>
                 </div>
                 <div>
@@ -112,9 +123,10 @@ export const Filters = () => {
                       type="radio"
                       id="3stars"
                       name="radio_rating"
-                      checked={Rating==="Three"}
+                      checked={Rating === "Three"}
                       onChange={() => filterDispatch({ type: "Three" })}
-                    /> 3 stars & above
+                    />{" "}
+                    3 stars & above
                   </label>
                 </div>
                 <div>
@@ -123,9 +135,10 @@ export const Filters = () => {
                       type="radio"
                       id="2strs"
                       name="radio_rating"
-                      checked={Rating==="Two"}
+                      checked={Rating === "Two"}
                       onChange={() => filterDispatch({ type: "Two" })}
-                    /> 2 stars & above
+                    />{" "}
+                    2 stars & above
                   </label>
                 </div>
                 <div>
@@ -134,9 +147,10 @@ export const Filters = () => {
                       type="radio"
                       id="1strs"
                       name="radio_rating"
-                      checked={Rating==="One"}
+                      checked={Rating === "One"}
                       onChange={() => filterDispatch({ type: "One" })}
-                    /> 1 stars & above
+                    />{" "}
+                    1 stars & above
                   </label>
                 </div>
               </div>
@@ -150,9 +164,10 @@ export const Filters = () => {
                       type="radio"
                       id="HightoLow"
                       name="sort-price"
-                      checked={sortby==="HIGH-TO-LOW"}
+                      checked={sortby === "HIGH-TO-LOW"}
                       onChange={() => filterDispatch({ type: "HIGH-TO-LOW" })}
-                    /> Price-High-to-Low
+                    />{" "}
+                    Price-High-to-Low
                   </label>
                 </div>
                 <div>
@@ -161,14 +176,16 @@ export const Filters = () => {
                       type="radio"
                       id="LowtoHigh"
                       name="sort-price"
-                      checked={sortby==="LOW-TO-HIGH"}
+                      checked={sortby === "LOW-TO-HIGH"}
                       onChange={() => filterDispatch({ type: "LOW-TO-HIGH" })}
-                    /> Price-Low-to-High
+                    />
+                    Price-Low-to-High
                   </label>
                 </div>
               </div>
             </li>
-          </ul>
+          </div>
+        </ul>
       </div>
     </>
   );
