@@ -84,7 +84,8 @@ const AuthProvider = ({ children }) => {
           Toast("somthing went wrong", "wrong");
         }
       } catch (error) {
-        Toast(error.response.data.errors[0]);
+        Toast(`${error.response.data.errors[0]}`, "error");
+        
       }
     }
   };

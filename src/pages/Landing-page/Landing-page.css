@@ -18,6 +18,7 @@ a,
 .user-name {
   color: var(--black-color);
   font-size: 1rem;
+  padding-right:1rem;
 }
 
 .nav_bar {
@@ -62,6 +63,7 @@ a,
   flex-wrap: wrap;
 }
 
+
 .nav_container {
   position: sticky;
   top: 0;
@@ -69,14 +71,13 @@ a,
   margin: 0;
 }
 
-h5,
-.e_icons:hover {
+h5{
   color: var(--black-color);
 }
 
 .icon_nav {
   color: var(--primary-color);
-  margin-left:1rem;
+  margin-left: 1rem;
 }
 
 .icon-container-nav {
@@ -88,14 +89,12 @@ h5,
   flex-direction: row-reverse;
   margin-top: 1rem;
   height: 15rem;
-  background-image: linear-gradient(
-    #dcfce7,
-    #f1f5f9,
-    #fefce8,
-    #fecdd3,
-    #fef2f2,
-    #bbf7d0
-  );
+  background-image: linear-gradient(#dcfce7,
+      #f1f5f9,
+      #fefce8,
+      #fecdd3,
+      #fef2f2,
+      #bbf7d0);
   filter: drop-shadow(8px 8px 10px var(--gray-color));
 }
 
@@ -133,6 +132,7 @@ h5,
   font-size: 1.5rem;
   width: 20rem;
   transform: skew(20deg);
+
 }
 
 .categorey_container {
@@ -166,7 +166,6 @@ h5,
 
 .footer {
   position: relative;
-  bottom:-3.5rem;
   background-color: var(--black-color);
 }
 
@@ -177,7 +176,16 @@ h5,
 }
 
 .list-item-inline:hover {
-  background-color:transparent;
+  background-color: transparent;
+}
+
+.link-hover {
+  list-style: none;
+  font-size:1.5rem;
+}
+
+.user-icon{
+  padding-top: 0.5rem;
 }
 
 .badge_cart,

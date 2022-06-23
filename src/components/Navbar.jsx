@@ -78,9 +78,9 @@ export const Navbar = ({searchQurey, setSerachQurey}) => {
                 <Link to="/wishlist">
                   <i className="icon_nav fa fa-heart-o"></i>
                 </Link>
-                {users && token ? (
+                {users && token && wishList.length>0 ? (
                   <p className="badge_wishlist font_small dis_flex padding_small">
-                    {wishList?.length >= 1 ? wishList.length : 0}
+                    {wishList.length}
                   </p>
                 ) : null}
               </div>
@@ -90,7 +90,7 @@ export const Navbar = ({searchQurey, setSerachQurey}) => {
                 <Link to="/cart">
                   <i className="icon_nav fas fa-shopping-cart"></i>
                 </Link>
-                {users && token ? (
+                {users && token && cart.length>0 ? (
                   <p className="badge_cart font_small dis_flex padding_small">
                     {cart.length}
                   </p>
@@ -101,7 +101,7 @@ export const Navbar = ({searchQurey, setSerachQurey}) => {
               <div className="user-container dis_flex">
                 <Link to="/">
                   <div className="icon-container-nav">
-                    <i className="icon_nav fas fa-user"></i>
+                    <i className="icon_nav user-icon fas fa-user"></i>
                   </div>
                   {token && users ? (
                     <div className="user-name"> {user.firstName}</div>

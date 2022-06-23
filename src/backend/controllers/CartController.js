@@ -1,4 +1,5 @@
 import { Response } from "miragejs";
+import { Toast } from "../../components";
 import { formatDate, requiresAuth } from "../utils/authUtils";
 
 /**
@@ -121,14 +122,14 @@ export const updateCartItemHandler = function (schema, request) {
     const { action } = JSON.parse(request.requestBody);
     if (action.type === "increment") {
       userCart.forEach((product) => {
-        if (product._id === productId) {
+        if (product._id === productId && product.Quantity < 5) {
           product.Quantity += 1;
           product.updatedAt = formatDate();
         }
       });
     } else if (action.type === "decrement") {
       userCart.forEach((product) => {
-        if (product._id === productId) {
+        if (product._id === productId && product.Quantity > 1) {
           product.Quantity -= 1;
           product.updatedAt = formatDate();
         }

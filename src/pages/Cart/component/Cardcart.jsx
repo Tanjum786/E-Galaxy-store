@@ -1,17 +1,11 @@
-import {
-  addToWishlist,
-  removefromCart,
-  removeFromWishlist,
-  updateCart,
-} from "../../../Apicalls";
+import { addToWishlist, removefromCart, updateCart } from "../../../Apicalls";
 import { Toast } from "../../../components/Toast";
 import { useProducts } from "../../../Context";
-
+import { BsTrashFill } from "react-icons/bs";
 const Cardcart = () => {
   const { productState, productDispatch } = useProducts();
   const { cart, wishList } = productState;
   const token = localStorage.getItem("token");
-
 
   const movetoWishlistHandler = (product) => {
     const wishlistItem = wishList?.find((item) => item._id === product._id);
@@ -22,7 +16,6 @@ const Cardcart = () => {
     removefromCart(product._id, token, productDispatch);
   };
 
-  
   return (
     <>
       {cart?.map(({ img, title, price, Quantity, _id }) => {
@@ -41,44 +34,32 @@ const Cardcart = () => {
               <div className="cart_quantity dis_flex">
                 <span className="qunt">Quantity:</span>
                 <button
-                  className="qunt_btn bg_color font_small"
-                  disabled={Quantity > 1 && Quantity > 0 ? false : true}
+                  className=" bg_color font_small"
+                  disabled={Quantity > 1 ? false : true}
                   onClick={() => {
                     {
-                      Quantity > 1
-                        ? Toast(
-                            `You've changed '${title}' QUANTITY to '${
-                              Quantity - 1
-                            }'`,
-                            "success"
-                          )
-                        : "";
+                      Quantity >= 1
+                        ? updateCart(_id, "decrement", token, productDispatch)
+                        : removefromCart(_id, token, productDispatch);
                     }
-
-                    updateCart(_id, "decrement", token, productDispatch);
                   }}
                 >
                   -
                 </button>
                 <p className="input_num font_small">{Quantity}</p>
                 <button
-                  className="qunt_btn bg_color font_small"
-                  disabled={Quantity < 5 && Quantity != 6 ? false : true}
+                  className=" bg_color font_small"
+                  disabled={Quantity <= 4 ? false : true}
                   onClick={() => {
-                    updateCart(_id, "increment", token, productDispatch);
                     {
                       Quantity >= 5
                         ? Toast(
                             `We're sorry! Only 5 unit(s) allowed in each order`,
                             "warning"
                           )
-                        : Toast(
-                            `You've changed '${title}' QUANTITY to '${
-                              Quantity + 1
-                            }'`,
-                            "success"
-                          );
+                        : "";
                     }
+                    updateCart(_id, "increment", token, productDispatch);
                   }}
                 >
                   +
@@ -98,8 +79,6 @@ const Cardcart = () => {
                   className="cart_wishlist_btn bg_color btn_cart font_small"
                   onClick={() => {
                     movetoWishlistHandler({ img, price, _id, title, Quantity });
-                    // Toast(`Successfuly Moved ${title} to wishlist`, "success");
-                    // addToWishlist()
                   }}
                 >
                   Move to wishlist
