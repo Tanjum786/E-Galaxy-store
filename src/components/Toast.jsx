@@ -4,7 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 export const Toast = (text, theme) => {
   const notify = () => {
     toast[theme](text, {
-      position:"top-right",
+      position:"bottom-right",
       autoClose: 2000,
       theme: "dark",
       closeOnClick: true,
