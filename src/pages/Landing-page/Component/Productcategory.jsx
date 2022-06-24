@@ -12,7 +12,7 @@ const Productcategory = ({ productImage, categoryName }) => {
     
       
     }
-    else if (categoryName==="women's wear") {
+    else if (categoryName==="Women's wear") {
       filterDispatch({type:"CLEAR_CATEGORY"})
       filterDispatch({type:"WOMEN",payload:categoryName})
 

@@ -14,7 +14,7 @@ export const Categoryfun = (product, {CategoryMen, CategoryWomen, CategoryKids})
   }
   if (CategoryWomen) {
     allCategory = allCategory.concat(
-      product.filter((items) => items.categoryName==="women's wear" )
+      product.filter((items) => items.categoryName==="Women's wear" )
     );
   }
   if (CategoryKids) {

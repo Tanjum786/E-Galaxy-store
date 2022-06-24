@@ -59,7 +59,7 @@ export const products = [
     img: productimg3,
     price: 2999,
     Quantity: 1,
-    categoryName: "women's wear",
+    categoryName: "Women's wear",
     rating: 3,
   },
   {
@@ -68,7 +68,7 @@ export const products = [
     img: productimg4,
     price: 1499,
     Quantity: 1,
-    categoryName: "women's wear",
+    categoryName: "Women's wear",
     rating: 3,
   },
   {
@@ -77,7 +77,7 @@ export const products = [
     img: productimg5,
     price: 989,
     Quantity: 1,
-    categoryName: "women's wear",
+    categoryName: "Women's wear",
     rating: 4,
   },
   {
@@ -95,7 +95,7 @@ export const products = [
     img: productimg7,
     price: 799,
     Quantity: 1,
-    categoryName: "women's wear",
+    categoryName: "Women's wear",
     rating: 3,
   },
   {
@@ -104,7 +104,7 @@ export const products = [
     img: productimg8,
     price: 399,
     Quantity: 1,
-    categoryName: "women's wear",
+    categoryName: "Women's wear",
     rating: 2,
   },
   {
@@ -113,7 +113,7 @@ export const products = [
     img: productimg9,
     price: 900,
     Quantity: 1,
-    categoryName: "women's wear",
+    categoryName: "Women's wear",
     rating: 3,
   },
   {
@@ -122,7 +122,7 @@ export const products = [
     img: productimg10,
     price: 599,
     Quantity: 1,
-    categoryName: "women's wear",
+    categoryName: "Women's wear",
     rating: 3,
   },
   {
@@ -131,7 +131,7 @@ export const products = [
     img: productimg11,
     price: 599,
     Quantity: 1,
-    categoryName: "women's wear",
+    categoryName: "Women's wear",
     rating: 3,
   },
   {
