@@ -36,9 +36,12 @@ export const authReducer = (authState, authAction) => {
     case "LOGOUT":
       return {
         ...authState,
-        isSubmit: false,
         email: "",
+        firstName: "",
+        lastName: "",
         password: "",
+        confirPassword: "",
+        isSubmit: false,
       };
 
     default:

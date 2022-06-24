@@ -6,7 +6,12 @@ import { useAuth, useloginsignup } from "../../Context";
 import "./Authentication.css";
 
 export const Signup = () => {
-  const { showPassword, showPasswordFun } = useloginsignup();
+  const {
+    showPassword,
+    showPasswordFun,
+    showconfirmPassword,
+    showconfirmPasswordFun,
+  } = useloginsignup();
   const { SignUp, authState, Authdispatch } = useAuth();
   const { email, firstName, lastName, password, confirPassword, isSubmit } =
     authState;
@@ -30,7 +35,7 @@ export const Signup = () => {
     if (password === confirPassword) {
       return true;
     } else {
-      Toast("password enter is not match");
+      Toast("password enter is not match", "worng");
       return false;
     }
   };
@@ -108,25 +113,40 @@ export const Signup = () => {
                     name: e.target.name,
                   })
                 }
+                required
               />
               <label htmlFor="password_signup">
                 Password<small className="star_color font_small">*</small>
               </label>
-              <input
-                type="text"
-                name="password"
-                className="input_filed padding_small"
-                placeholder="Enter your password"
-                value={password}
-                onChange={(e) =>
-                  Authdispatch({
-                    type: "USER_DETAILS",
-                    payload: e.target.value,
-                    name: e.target.name,
-                  })
-                }
-                required
-              />
+              <div className="showpassword_container">
+                <input
+                  type={showPassword}
+                  name="password"
+                  className="input_filed padding_small password_filed"
+                  placeholder="Enter your password"
+                  value={password}
+                  onChange={(e) =>
+                    Authdispatch({
+                      type: "USER_DETAILS",
+                      payload: e.target.value,
+                      name: e.target.name,
+                    })
+                  }
+                  required
+                />
+                {showPassword === "password" ? (
+                  <i
+                    className="fa-solid fa-eye-slash eye_slash"
+                    onClick={showPasswordFun}
+                  ></i>
+                ) : (
+                  <i
+                    className="fa-solid fa-eye eye_slash"
+                    onClick={showPasswordFun}
+                  ></i>
+                )}
+              </div>
+
               <label htmlFor="Confirm_pass">
                 Confirm password
                 <small className="star_color font_small">*</small>
@@ -147,15 +167,15 @@ export const Signup = () => {
                   }
                   required
                 />
-                {showPassword === "password" ? (
+                {showconfirmPassword === "password" ? (
                   <i
                     className="fa-solid fa-eye-slash eye_slash"
-                    onClick={showPasswordFun}
+                    onClick={showconfirmPasswordFun}
                   ></i>
                 ) : (
                   <i
                     className="fa-solid fa-eye eye_slash"
-                    onClick={showPasswordFun}
+                    onClick={showconfirmPasswordFun}
                   ></i>
                 )}
               </div>
