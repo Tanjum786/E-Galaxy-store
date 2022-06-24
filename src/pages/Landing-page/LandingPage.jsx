@@ -18,7 +18,7 @@ export const LandingPage = () => {
   return (
     <>
       <div className="e_container">
-        <Navbar auth={"Login"} linkto={"/login"} />
+        <Navbar/>
         <div className="advertise_sale dis_flex">
           <div>
             <Link to="/">
@@ -55,7 +55,7 @@ export const LandingPage = () => {
             <Productcategory
               productImage={image7}
               cardAlt={"image"}
-              categoryName="women's wear"
+              categoryName="Women's wear"
             />
           </div>
         </div>

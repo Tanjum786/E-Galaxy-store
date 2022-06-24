@@ -48,6 +48,7 @@ export const Navbar = ({searchQurey, setSerachQurey}) => {
               placeholder=" Search Your Desire"
               name="search"
               value={searchQurey}
+              onClick={()=>navigate("/product")}
               onChange={searchInputHandler}
             />
           </div>
