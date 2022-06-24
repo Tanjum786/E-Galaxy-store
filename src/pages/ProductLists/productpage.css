@@ -83,7 +83,7 @@
   color: var(--secondary-color);
   border: none;
   border-radius: 0.5rem;
-  background-color: var(--background-color);
+  background-color: transparent;
 }
 
 .clear_btn:hover {
@@ -151,17 +151,30 @@
 }
 
 .imgwarning {
-  height: 36rem;
+  width: 30rem;
+}
+
+.warning-image-div {
   justify-content: center;
-  align-items: center;
+}
+
+.label-container {
+  gap: 0.5rem;
+
 }
 
 .products_title,
 .waring-massage {
-  text-align: center;
+ margin: 1rem;
+}
+
+.products_title,
+.waring-massage, 
+.filters_title {
   font-size: 2rem;
+  text-align: center;
   color: var(--secondary-color);
-  margin: 1rem;
+
 }
 
 .wishlist_btn {
@@ -183,9 +196,4 @@
 .filter-section {
   position: sticky;
   top: 0;
-}
-
-.filter-sticky {
-  overflow-y: scroll;
-  height: 25rem;
 }
