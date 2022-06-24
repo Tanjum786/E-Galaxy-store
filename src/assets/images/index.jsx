@@ -22,7 +22,7 @@ import kidsimg4 from "./kids-img4.jpg";
 import kidsimg5 from "./kids-img5.jpg";
 import mensimg2 from "./mens-img2.jpeg";
 import mensimg3 from './mens-img3.jpeg';
-import imgWarning from './product-warning.png';
+import imgWarning from './product-warning.svg';
 import Emptycartimg from './emptyCart.png'
 import wishlistimg from './wishlist-empty.png'
 export {
