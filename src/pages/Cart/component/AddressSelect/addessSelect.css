@@ -1,0 +1,33 @@
+.selectaddress-container {
+    width: 25rem;
+    margin-left: 10rem;
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.selectaddress {
+    border: 1px solid var(--black-color);
+    margin-top: 1rem;
+}
+
+.selectaddress input {
+    margin-left: 0.5rem;
+    margin-top: 1rem;
+}
+
+.detaile-selectaddress {
+    padding: 0rem;
+    margin-left: 2rem;
+}
+
+.detail-selectedAddress {
+    position: relative;
+    bottom: 1.3rem;
+}
+.add-btn{
+    margin: 12rem;
+
+}
+

@@ -1,0 +1,16 @@
+.profilecard-container{
+    height: 100vh;
+}
+.profile-navigation{
+    padding-top: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
+    border: 1px solid black;
+}
+.nav-link{
+    color: var(--black-color);
+    font-size: 2rem;
+    
+}

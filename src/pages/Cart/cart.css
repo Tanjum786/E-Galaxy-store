@@ -155,7 +155,15 @@ button{
   margin: 1rem;
   border: none;
 }
-
+.checkout-container{
+  display: flex;
+  justify-content: space-evenly;
+}
+.checkout-title{
+  padding: 2rem;
+  color: var(--primary-color);
+  text-align: center;
+}
 @media (max-width: 768px) {
   .price_detailes_container {
     width: 50%;
