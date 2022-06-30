@@ -29,6 +29,8 @@ export const ProductReducerFun = (productstate, productAction) => {
         wishList: productAction.payload,
       };
 
+   
+
     default:
       break;
   }

@@ -20,6 +20,8 @@ const AuthProvider = ({ children }) => {
     password: "",
     confirPassword: "",
     isSubmit: false,
+    addresses:[],
+    orders:[]
   });
 
   const SignUp = async (
@@ -97,7 +99,8 @@ const AuthProvider = ({ children }) => {
         Authdispatch,
         userDetailes,
         loginPage,
-        setUserDetailes,
+        setUserDetailes
+        
       }}
     >
       {children}
