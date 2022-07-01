@@ -12,7 +12,7 @@ export const AddessSelect = ({
   return (
     <>
       <section className="selectaddress-container">
-        {addresses.map((item) => (
+        {addresses?.map((item) => (
           <div className="selectaddress">
             <input
               type="radio"

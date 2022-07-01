@@ -20,8 +20,6 @@ const AuthProvider = ({ children }) => {
     password: "",
     confirPassword: "",
     isSubmit: false,
-    addresses:[],
-    orders:[]
   });
 
   const SignUp = async (

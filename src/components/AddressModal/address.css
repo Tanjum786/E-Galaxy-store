@@ -34,7 +34,8 @@
     margin-top: 0.4rem;
 
 }
-.modal-btn-container{
+
+.modal-btn-container {
     display: flex;
     justify-content: center;
     padding-bottom: 1rem;

@@ -1,7 +1,7 @@
 import axios from "axios";
 import { Toast } from "../../components";
 
-export const addnewAddress = async (address, token, Authdispatch) => {
+export const addnewAddress = async (address, token, productDispatch) => {
   try {
     const response = await axios.post(
       "/api/user/address",
@@ -10,7 +10,7 @@ export const addnewAddress = async (address, token, Authdispatch) => {
     );
     console.log(response.data.address)
     if (response.status === 201) {
-        Authdispatch({ type: "ADD-ADDRESS", payload: response.data.address });
+        productDispatch({ type: "ADD-ADDRESS", payload: response.data.address });
       Toast("sucessfully added new address","success");
     }
   } catch (error) {

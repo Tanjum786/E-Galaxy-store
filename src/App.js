@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-import "./App.css";
 import MockmanEs from "mockman-js";
 import {
   Cart,
@@ -10,7 +9,7 @@ import {
   Signup,
   Wishlist,
 } from "./pages";
-import { AddressModal, Footer, Profile } from "./components";
+import { AddressModal, Footer} from "./components";
 import { ToastContainer } from "react-toastify";
 import { RequireAuth } from "./RequireAuth";
 import { Address, Myorder } from "./pages/Profilepage/Components";

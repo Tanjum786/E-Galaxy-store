@@ -11,7 +11,32 @@ export const ProductReducerFun = (productstate, productAction) => {
         ...productstate,
         cart: productAction.payload,
       };
-
+      case "ADD-ADDRESS":
+        return {
+          ...productstate,
+          addresses: productAction.payload,
+        };
+  
+      case "ADD-NEW-ORDER":
+        return {
+          ...productstate,
+          orders: productAction.payload,
+        };
+      case "REMOVE-ADDRESS":
+        return {
+          ...productstate,
+          addresses: productAction.payload,
+        };
+      case "GET-Address":
+        return {
+          ...productstate,
+          addresses: productAction.payload,
+        };
+      case "EDIT-ADDRESS":
+        return {
+          ...productstate,
+          addresses: productAction.payload,
+        };
     case "REMOVE_FROM_CART":
       return {
         ...productstate,

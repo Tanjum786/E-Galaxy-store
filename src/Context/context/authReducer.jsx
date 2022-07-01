@@ -32,26 +32,6 @@ export const authReducer = (authState, authAction) => {
         email: authAction.payload.email,
         password: authAction.payload.password,
       };
-    case "ADD-ADDRESS":
-      return {
-        ...authState,
-        addresses: authAction.payload,
-      };
-    case "REMOVE-ADDRESS":
-      return {
-        ...authState,
-        addresses: authAction.payload,
-      };
-    case "GET-Address":
-      return {
-        ...authState,
-        addresses: authAction.payload,
-      };
-    case "EDIT-ADDRESS":
-      return {
-        ...authState,
-        addresses: authAction.payload,
-      };
     case "LOGOUT":
       return {
         ...authState,

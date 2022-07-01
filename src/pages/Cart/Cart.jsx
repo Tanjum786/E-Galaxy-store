@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./cart.css";
 import { AddressModal, Navbar } from "../../components";
 import { Emptycartimg } from "../../assets/images";
-import { useAuth, useProducts } from "../../Context";
+import {useProducts } from "../../Context";
 import { AddessSelect, Cardcart, Cartbill, Checkoutbill } from "./component";
 
 export const Cart = () => {
@@ -12,9 +12,7 @@ export const Cart = () => {
   const [showAddressModal, setAddressModal] = useState(false);
   const [selectAddress, setSelectAddress] = useState(null);
   const [checkout, setCheckout] = useState(false);
-  const { userDetailes, authState, Authdispatch } = useAuth();
-  const { token } = userDetailes;
-  const { addresses } = authState;
+  const { addresses } = productState;
 
   const Price = cart.reduce(
     (accum, value) => value.price * 2 * value.Quantity + accum,

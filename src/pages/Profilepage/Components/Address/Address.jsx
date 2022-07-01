@@ -1,14 +1,15 @@
 import React, { useEffect } from "react";
 import { BsPlusLg } from "react-icons/bs";
 import { removeAddress } from "../../../../Apicalls/AddressManagement/removeAddress";
-import { useAuth } from "../../../../Context";
+import { useAuth, useProducts } from "../../../../Context";
 import "./address.css";
 
 export const Address = ({ setAddressModal, setEditAddress }) => {
-  const { userDetailes, authState, Authdispatch } = useAuth();
+  const { userDetailes} = useAuth();
   const { token } = userDetailes;
-  const { addresses } = authState;
-
+  const {productState,productDispatch}=useProducts()
+  const {addresses}=productState
+  
   const updateAddress = (address) => {
     setEditAddress(address);
     setAddressModal(true);
@@ -22,10 +23,10 @@ export const Address = ({ setAddressModal, setEditAddress }) => {
   return (
     <>
       <div className="address-container">
-        {addresses ? (
+        {addresses? (
           <div>
             <div className="address-detailes">
-              {addresses.map((item) => {
+              {addresses?.map((item) => {
                 return (
                   <div className="detailes">
                     <h1>{item.name}</h1>
@@ -45,7 +46,7 @@ export const Address = ({ setAddressModal, setEditAddress }) => {
                       <button
                         className="login_btn remove-btn"
                         onClick={() =>
-                          removeAddress(item._id, token, Authdispatch)
+                          removeAddress(item._id, token, productDispatch)
                         }
                       >
                         Remove

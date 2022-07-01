@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { editAddressApi } from "../../Apicalls";
 import { addnewAddress } from "../../Apicalls/AddressManagement/addNewAddress";
-import { useAuth } from "../../Context";
+import { useAuth, useProducts } from "../../Context";
 import { Toast } from "../Toast";
 import "./address.css";
 
@@ -21,8 +21,9 @@ export const AddressModal = ({
     zipCode: "",
     country: "",
   });
-  const { userDetailes, Authdispatch } = useAuth();
+  const { userDetailes } = useAuth();
   const { token } = userDetailes;
+  const {productDispatch } = useProducts();
   const changeHandler = (e) => {
     const { name, value } = e.target;
     setaddress({ ...address, [name]: value });
@@ -30,27 +31,29 @@ export const AddressModal = ({
   const navigate = useNavigate();
   const checkInputs = () => {
     return (
-      address.name &&
-      address.city &&
-      address.country &&
-      address.mobile &&
-      address.zipCode
+      !address.name == " " &&
+      !address.city == " " &&
+      !address.country == " " &&
+      !address.mobile == " " &&
+      !address.zipCode == " "
     );
   };
   const callAddressApi = () => {
-    if (checkInputs) {
+    if (checkInputs()) {
       if (token) {
         if (editAddress) {
-          editAddressApi(address, token, Authdispatch);
+          editAddressApi(address, token, productDispatch);
           setEditAddress(null);
         } else {
-          addnewAddress(address, token, Authdispatch);
+          addnewAddress(address, token, productDispatch);
         }
         setAddressModal(false);
       } else {
         navigate("/login");
         Toast("you have to login first", "info");
       }
+    } else {
+      Toast("All filed must be filled", "error");
     }
   };
 
@@ -77,6 +80,7 @@ export const AddressModal = ({
                     onChange={changeHandler}
                     placeholder="Enter your first Name"
                     name="name"
+                    required
                   />
                   <input
                     type="text"
@@ -84,6 +88,7 @@ export const AddressModal = ({
                     onChange={changeHandler}
                     placeholder="Enter your street Name"
                     name="street"
+                    required
                   />
                   <input
                     type="text"
@@ -91,6 +96,7 @@ export const AddressModal = ({
                     onChange={changeHandler}
                     placeholder="Enter your state Name"
                     name="state"
+                    required
                   />
                   <input
                     type="text"
@@ -98,20 +104,7 @@ export const AddressModal = ({
                     value={address.city}
                     onChange={changeHandler}
                     name="city"
-                  />
-                  <input
-                    type="number"
-                    placeholder="Enter your phone Number"
-                    name="mobile"
-                    value={address.mobile}
-                    onChange={changeHandler}
-                  />
-                  <input
-                    type="number"
-                    placeholder="Enter your zipCode Number"
-                    name="zipCode"
-                    value={address.zipCode}
-                    onChange={changeHandler}
+                    required
                   />
                   <input
                     type="text"
@@ -119,6 +112,23 @@ export const AddressModal = ({
                     value={address.country}
                     onChange={changeHandler}
                     name="country"
+                    required
+                  />
+                  <input
+                    type="number"
+                    placeholder="Enter your phone Number"
+                    name="mobile"
+                    value={address.mobile}
+                    onChange={changeHandler}
+                    required
+                  />
+                  <input
+                    type="number"
+                    placeholder="Enter your zipCode Number"
+                    name="zipCode"
+                    value={address.zipCode}
+                    onChange={changeHandler}
+                    required
                   />
                 </form>
                 <div className="modal-btn-container">
