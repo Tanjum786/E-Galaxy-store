@@ -1,6 +1,5 @@
-import { Action } from "history";
-
 export const authReducer = (authState, authAction) => {
+  console.log(authState);
   switch (authAction.type) {
     case "USER_DETAILS":
       return {

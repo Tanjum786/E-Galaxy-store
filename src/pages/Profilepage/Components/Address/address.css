@@ -1,0 +1,35 @@
+
+.plus-icon-btn{
+    margin:1rem;
+    font-size: 1.5rem;
+    background-color: transparent;
+}
+.plus-icon{
+    margin-left: 0.5rem;
+    font-size: 1rem;
+}
+.address-detailes{
+    padding: 1rem;
+}
+.btns{
+    margin:1rem 0 1rem 0;
+}
+.edit-btn{
+    width: 4rem;
+    margin-right: 1rem;
+}
+.remove-btn{
+background-color: transparent;
+border: 1px solid var(--black-color);
+font-weight: bold;
+color: var(--black-color);
+}
+.remove-btn:hover{
+    color: var(--pureWhite-color);
+}
+.address-detail{
+    padding: 0;
+}
+.detailes{
+    border-bottom: 2px solid var(--boder-color);
+}

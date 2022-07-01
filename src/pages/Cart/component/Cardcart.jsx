@@ -1,7 +1,6 @@
 import { addToWishlist, removefromCart, updateCart } from "../../../Apicalls";
 import { Toast } from "../../../components/Toast";
 import { useProducts } from "../../../Context";
-import { BsTrashFill } from "react-icons/bs";
 const Cardcart = () => {
   const { productState, productDispatch } = useProducts();
   const { cart, wishList } = productState;

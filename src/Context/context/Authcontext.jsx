@@ -97,7 +97,8 @@ const AuthProvider = ({ children }) => {
         Authdispatch,
         userDetailes,
         loginPage,
-        setUserDetailes,
+        setUserDetailes
+        
       }}
     >
       {children}

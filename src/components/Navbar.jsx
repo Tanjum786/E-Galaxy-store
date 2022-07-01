@@ -100,7 +100,7 @@ export const Navbar = ({searchQurey, setSerachQurey}) => {
             </li>
             <li className="list-item-inline">
               <div className="user-container dis_flex">
-                <Link to="/">
+                <Link to="/profilepage">
                   <div className="icon-container-nav">
                     <i className="icon_nav user-icon fas fa-user"></i>
                   </div>

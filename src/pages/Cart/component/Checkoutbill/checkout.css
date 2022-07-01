@@ -1,0 +1,43 @@
+.billing-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 5rem;
+}
+
+.order-title {
+    font-size: 1.5rem;
+    color: var(--success-alert-color);
+}
+
+.purchase-title {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.total-amt-title {
+    font-size: 1rem;
+}
+
+.itemTitle-container,
+.prices-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.padding-par {
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+.checkout-billing-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.padding-parAdd {
+    padding: 0;
+    font-size: 1rem;
+}

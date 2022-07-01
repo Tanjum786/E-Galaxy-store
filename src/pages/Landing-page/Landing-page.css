@@ -166,6 +166,7 @@ h5{
 
 .footer {
   position: relative;
+   margin-top: 10rem;
   background-color: var(--black-color);
 }
 
